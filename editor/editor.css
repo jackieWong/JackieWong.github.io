@@ -1,0 +1,131 @@
+*{
+	margin:0;
+	padding:0;}
+#simpleeditor{
+	width:800px;
+	height:500px;
+	border:1px #CCCCCC solid;
+	margin:20px auto!important;
+	background-color:#D5D5D5;
+	}
+/*----------------
+工具栏
+----------------*/
+#editoropera{
+	width:100%;
+	height:30px;
+	background-color:#E1E1E1;
+	box-shadow:0 -1px 5px #CCCCCC;
+	}
+#editoropera ul{
+	margin:auto;
+	height:20px;
+	}
+#editoropera li{
+	list-style:none;
+	display:inline-block;
+	width:20px;
+	height:100%;
+	margin:5px 0 0 2px;
+	cursor:pointer;
+	position:relative;
+	}
+#editoropera li:hover{
+	background-color:#FFF;
+	}
+#editoropera button{
+	width:100%;
+	height:100%;
+	background-color:transparent;
+	display:block;
+	border:none;}
+/*设置图标*/
+#editorb{
+	background:url(editor.png) 0 0;
+	}
+#editori{
+	background:url(editor.png) -20px 0;
+	}
+#editoru{
+	background:url(editor.png) -40px 0;
+	}
+#editorforecolor{
+	background:url(editor.png) -60px 0;
+	}
+#editorbgcolor{
+	background:url(editor.png) -80px 0;
+	}
+#editorlink{
+	background:url(editor.png) -41px -22px;
+	}
+#editorcut{
+	background:url(editor.png) -139px -61px;
+	}
+#editorcopy{
+	background:url(editor.png) -160px -60px;
+	}
+#editorpaste{
+	background:url(editor.png) -39px -61px;
+	}
+#editorjustifyleft{
+	background:url(editor.png) -80px -20px;
+	}
+#editorjustifycenter{
+	background:url(editor.png) -240px -40px;
+	}
+#editorjustifyright{
+	background:url(editor.png) -260px -40px;
+	}
+#editorindent{
+	background:url(editor.png) -220px -40px;
+	}
+#editorpho{
+	width:32px !important;
+	height:23px !important;
+	background:url(editor.png) -44px -83px;
+	margin-top:0 !important;
+	border:none !important;
+	}
+/*字体选择和字号选择*/
+#editorfontname{
+	border:none !important;
+	width:75px !important;
+}
+#editorfontsize{
+	border:none !important;
+	width:75px !important;
+	}
+#editoropera select{
+	position:absolute;
+	height:115%;
+	top:-15%;
+	width:100%;
+	color:#999;
+	font-size:14px;
+	}
+/*--------------------
+编辑区域
+------------------*/
+#textarea{
+	width:90%;
+	height:80%;
+	border-bottom:1px #CCCCCC solid;
+	margin:20px auto;
+	outline:none;
+	background-color:#FFF;
+	box-shadow:0 0 5px 2px #CCCCCC;
+	overflow:auto;
+	padding:20px;
+	}
+/*---------------------
+文件保存区域
+----------------------*/
+#savefile{
+	width:90%;
+	margin:auto;}
+#filename{
+	width:60px;}
+#savefile li{
+	list-style:none;
+	display:inline-block;}
+

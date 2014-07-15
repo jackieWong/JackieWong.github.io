@@ -1,0 +1,70 @@
+<html>
+<body>
+<head>
+	<link rel="stylesheet" type="text/css" href="editor.css"/> 
+	<script src="editor.js"></script>
+</head>
+<body>
+<div id="simpleeditor">
+	<div id="editoropera"><!--工具栏-->
+    	<ul>
+        	<li id="editorb"><button id="bbtn"></button></li><!--加粗-->
+            <li id="editoru"><button id="ubtn"></button></li><!--下划线-->
+            <li id="editori"><button id="ibtn"></button></li><!--斜体-->
+            <li id="editorforecolor"><button id="fcbtn"></button></li><!--前景色-->
+            <li id="editorbgcolor"><button id="bcbtn"></button></li><!--背景色-->
+            <li id="editorlink"><button id="lbtn"></button></li><!--超链接-->
+            <li id="editorfontname"><!--字体名称-->
+            	<select id="fonttype">
+   				    <option value="Arial">Arial</option>
+  					<option value="Helvetica">Helvetica</option>
+				</select>
+            </li>
+            <li id="editorfontsize"><!--字体大小-->
+            	<select id="fontsize">
+  					<option id="fontsize1" value ="1">Size 1</option>
+  					<option id="fontsize2" value ="2">2</option>			
+					<option id="fontsize3" value ="3">3</option>
+                    <option id="fontsize4" value ="4">4</option>
+                    <option id="fontsize5" value ="5">5</option>
+                    <option id="fontsize6" value ="6">6</option>
+                    <option id="fontsize7" value ="7">7</option>
+				</select>
+            </li>
+            <li id="editorpho"><button id="phbtn"></button></li><!--插入图片-->
+            <li id="editorcut"><button id="cbtn"></button></li><!--剪切-->
+            <li id="editorcopy"><button id="cobtn"></button></li><!--复制-->
+            <li id="editorpaste"><button id="pasbtn"></button></li><!--粘贴-->
+            <li id="editorjustifyleft"><button id="jstlbtn"></button></li><!--左对齐-->
+            <li id="editorjustifycenter"><button id="jstcbtn"></button></li><!--居中-->
+            <li id="editorjustifyright"><button id="jstrbtn"></button></li><!--右对齐-->
+            <li id="editorindent"><button id="indbtn"></button></li><!--缩进-->
+        </ul>
+	</div><!--editoropera-->
+	<div id="textarea" contenteditable="true"><!--文本编辑区域,设置contenteditable为true-->
+		<h1>"Look Up" by Gary Turk</h1>
+		<br>
+		<img src="lookup.jpg" alt="picture">
+		<br><br>
+		<p>I have 422 friends, yet I am lonely.</p>
+		<p>I speak to all of them every day, yet none of them really know me.</p>
+		<p>The problem I have sits in the spaces between.</p>
+		<p>Looking into their eyes, or at a name on a screen.</p>
+		<br>
+		<p>I took a step back and opened my eyes,</p>
+		<p>I looked around and realised,</p>
+		<p>That this media we call social is anything but</p>
+		<p>When we open our computers and it's our doors we shut</p>	
+	</div><!--textarea-->
+    <div id="savefile"><!--文件保存操作栏-->
+    	<ul>
+    		<li><input id="filename" type="text" value="filename" placeholder="dir"/>.html</li>
+            <li><button id="savebtn">Save</button></li>
+            <li><button id="selectall">Select All</button></li>
+        </ul>
+    </div><!--savefile-->
+</div><!--simpleeditor-->
+<script> SimpleEditor.setUp();
+</script>
+</body>
+</html>
