@@ -55,6 +55,22 @@
 
 
 &lt;h2&gt;CSS&lt;/h2&gt;
+&lt;h3&gt;Insert CSS&lt;/h3&gt;
+&lt;p&gt;-externel css&lt;/p&gt;
+&lt;p&gt;-internel css&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;-inline css
+    &lt;p style="color:sienna; margin-left:20px;"&gt;This is a paragraph.&lt;/p&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;p&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;color:sienna; margin-left:20px;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;This is a paragraph.&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;&lt;strong&gt;Styles define how to display HTML elements.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Syntax:&lt;/strong&gt;&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;selector&lt;/span&gt; &lt;span class="n"&gt;Declaration&lt;/span&gt;    &lt;span class="n"&gt;Declaration&lt;/span&gt;
@@ -88,22 +104,6 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;Insert CSS&lt;/h3&gt;
-&lt;p&gt;-externel css&lt;/p&gt;
-&lt;p&gt;-internel css&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;style&amp;gt;&lt;/span&gt;
-    &lt;span class="nt"&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
-&lt;span class="nt"&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;-inline css
-    &lt;p style="color:sienna; margin-left:20px;"&gt;This is a paragraph.&lt;/p&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;p&lt;/span&gt; &lt;span class="na"&gt;style=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;color:sienna; margin-left:20px;&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;This is a paragraph.&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
 &lt;h3&gt;Cascading Order&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Browser default&lt;/li&gt;
@@ -112,6 +112,53 @@
 &lt;li&gt;Inline style(inside an HTML element)&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt; inline style has the highest priority.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;DOM&lt;/h2&gt;
+&lt;p&gt;The DOM Programming Interface
+DOM编程接口，DOM可以动态的被javascript被访问。&lt;/p&gt;
+&lt;p&gt;The HTML DOM can be accessed with JavaScript (and with other programming languages).&lt;/p&gt;
+&lt;p&gt;In the DOM, all HTML elements are defined as objects.
+在DOM模型中，所有的HTML element都是Object.编程接口就这些Object的属性和方法。&lt;/p&gt;
+&lt;p&gt;The programming interface is the properties and methods of each object.&lt;/p&gt;
+&lt;p&gt;A property is a value that you can get or set (like changing the content of an HTML element).&lt;/p&gt;
+&lt;p&gt;A method is an action you can do (like add or deleting an HTML element).&lt;/p&gt;
+&lt;p&gt;document.getElementById() is a method.
+innerHTML is property.&lt;/p&gt;
+&lt;h3&gt;DOM document object&lt;/h3&gt;
+&lt;p&gt;&lt;img alt="image" src="http://www.w3schools.com/js/pic_htmltree.gif" /&gt;&lt;/p&gt;
+&lt;p&gt;document object代表的是整个web页面，是其他所有HTML Element 的宿主
+访问页面中元素的时，首先需要访问到document对象&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image" src="http://www.w3schools.com/js/pic_navigate.gif" /&gt;&lt;/p&gt;
+&lt;h3&gt;DOM interface&lt;/h3&gt;
+&lt;p&gt;Finding HTML Element:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getElementByTagName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getElementByClassName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;  &lt;span class="c1"&gt;//not supported by ie 5 6 7&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Changing HTML Elements:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;element&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;innerHTML&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="n"&gt;element&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attribute&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="n"&gt;element&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attribute&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;element&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;property&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Adding and Deleting Elements&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;removeChild&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replaceChild&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Adding Event Handlers&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;onclick&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;DOM标准&lt;/p&gt;
 &lt;h2&gt;JavaScript&lt;/h2&gt;
 &lt;h3&gt;JS Statements&lt;/h3&gt;
 &lt;p&gt;exec by browser.&lt;/p&gt;
@@ -224,53 +271,6 @@ str.replace("abc","d")
 &lt;p&gt;&lt;strong&gt;toUpperCae toLowerCase&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;str.toUpperCase()
 str.toLowerCase()&lt;/p&gt;
-&lt;h2&gt;DOM&lt;/h2&gt;
-&lt;p&gt;The DOM Programming Interface
-DOM编程接口，DOM可以动态的被javascript被访问。&lt;/p&gt;
-&lt;p&gt;The HTML DOM can be accessed with JavaScript (and with other programming languages).&lt;/p&gt;
-&lt;p&gt;In the DOM, all HTML elements are defined as objects.
-在DOM模型中，所有的HTML element都是Object.编程接口就这些Object的属性和方法。&lt;/p&gt;
-&lt;p&gt;The programming interface is the properties and methods of each object.&lt;/p&gt;
-&lt;p&gt;A property is a value that you can get or set (like changing the content of an HTML element).&lt;/p&gt;
-&lt;p&gt;A method is an action you can do (like add or deleting an HTML element).&lt;/p&gt;
-&lt;p&gt;document.getElementById() is a method.
-innerHTML is property.&lt;/p&gt;
-&lt;h3&gt;DOM document object&lt;/h3&gt;
-&lt;p&gt;&lt;img alt="image" src="http://www.w3schools.com/js/pic_htmltree.gif" /&gt;&lt;/p&gt;
-&lt;p&gt;document object代表的是整个web页面，是其他所有HTML Element 的宿主
-访问页面中元素的时，首先需要访问到document对象&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image" src="http://www.w3schools.com/js/pic_navigate.gif" /&gt;&lt;/p&gt;
-&lt;h3&gt;DOM interface&lt;/h3&gt;
-&lt;p&gt;Finding HTML Element:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getElementByTagName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getElementByClassName&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;  &lt;span class="c1"&gt;//not supported by ie 5 6 7&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Changing HTML Elements:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;element&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;innerHTML&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
-&lt;span class="n"&gt;element&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attribute&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
-&lt;span class="n"&gt;element&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;setAttribute&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;attribute&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;value&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;span class="n"&gt;element&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;style&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;property&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Adding and Deleting Elements&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;removeChild&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;appendChild&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;replaceChild&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="n"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Adding Event Handlers&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;onclick&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;DOM标准&lt;/p&gt;
 &lt;h3&gt;Change HTML&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;HTML element的内容可以直接用innerHTML属性进行访问&lt;/li&gt;
@@ -348,5 +348,5 @@ innerHTML is property.&lt;/p&gt;
 &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attachEvent&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attachEvent&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;onclick&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;myFunction&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="web"></category><category term="js"></category></entry><entry><title>7/4 离开儒西title</title><link href="/74-chi-kai-ru-xi-title.html" rel="alternate"></link><updated>2014-07-04T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-07-04:74-chi-kai-ru-xi-title.html</id><summary type="html">&lt;p&gt;每当离开的时候才意识到自己会如此低落，的确不是悲哀，宿舍只有晨哥一个人了，想起当初四人初识之际，把酒言欢。在新宿舍认识的几个人，很巧，一个是本科在同一栋宿舍生活了四年却不曾有过片语的‘老同学’；另一个是喊了很久的
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="web"></category><category term="js"></category></entry><entry><title>7/4 Bye儒西</title><link href="/74-byeru-xi.html" rel="alternate"></link><updated>2014-07-04T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-07-04:74-byeru-xi.html</id><summary type="html">&lt;p&gt;每当离开的时候才意识到自己会如此低落，的确不是悲哀，宿舍只有晨哥一个人了，想起当初四人初识之际，把酒言欢。在新宿舍认识的几个人，很巧，一个是本科在同一栋宿舍生活了四年却不曾有过片语的‘老同学’；另一个是喊了很久的
 所谓‘师叔’的师兄。&lt;/p&gt;</summary><category term="生活"></category></entry></feed>

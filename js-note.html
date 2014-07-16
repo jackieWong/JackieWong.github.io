@@ -90,7 +90,7 @@ wstnap pantsw            </a>
 </footer><!-- /.post-info -->                    </div>
                 </div>
                 <p><strong> Web Deveslop</strong></p>
-<table border="1px">
+<table>
 <thead>
 <tr>
 <th>html</th>
@@ -145,6 +145,22 @@ wstnap pantsw            </a>
 
 
 <h2>CSS</h2>
+<h3>Insert CSS</h3>
+<p>-externel css</p>
+<p>-internel css</p>
+<div class="highlight"><pre><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;style&gt;</span>
+    <span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+</pre></div>
+
+
+<p>-inline css
+    <p style="color:sienna; margin-left:20px;">This is a paragraph.</p></p>
+<div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">&quot;color:sienna; margin-left:20px;&quot;</span><span class="nt">&gt;</span>This is a paragraph.<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+
+
 <p><strong>Styles define how to display HTML elements.</strong></p>
 <p><strong>Syntax:</strong></p>
 <div class="highlight"><pre><span class="n">selector</span> <span class="n">Declaration</span>    <span class="n">Declaration</span>
@@ -178,22 +194,6 @@ wstnap pantsw            </a>
 </pre></div>
 
 
-<h3>Insert CSS</h3>
-<p>-externel css</p>
-<p>-internel css</p>
-<div class="highlight"><pre><span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;style&gt;</span>
-    <span class="nt">&lt;/style&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-</pre></div>
-
-
-<p>-inline css
-    <p style="color:sienna; margin-left:20px;">This is a paragraph.</p></p>
-<div class="highlight"><pre><span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">&quot;color:sienna; margin-left:20px;&quot;</span><span class="nt">&gt;</span>This is a paragraph.<span class="nt">&lt;/p&gt;</span>
-</pre></div>
-
-
 <h3>Cascading Order</h3>
 <ol>
 <li>Browser default</li>
@@ -202,6 +202,53 @@ wstnap pantsw            </a>
 <li>Inline style(inside an HTML element)</li>
 </ol>
 <p><strong> inline style has the highest priority.</strong></p>
+<h2>DOM</h2>
+<p>The DOM Programming Interface
+DOM编程接口，DOM可以动态的被javascript被访问。</p>
+<p>The HTML DOM can be accessed with JavaScript (and with other programming languages).</p>
+<p>In the DOM, all HTML elements are defined as objects.
+在DOM模型中，所有的HTML element都是Object.编程接口就这些Object的属性和方法。</p>
+<p>The programming interface is the properties and methods of each object.</p>
+<p>A property is a value that you can get or set (like changing the content of an HTML element).</p>
+<p>A method is an action you can do (like add or deleting an HTML element).</p>
+<p>document.getElementById() is a method.
+innerHTML is property.</p>
+<h3>DOM document object</h3>
+<p><img alt="image" src="http://www.w3schools.com/js/pic_htmltree.gif" /></p>
+<p>document object代表的是整个web页面，是其他所有HTML Element 的宿主
+访问页面中元素的时，首先需要访问到document对象</p>
+<p><img alt="image" src="http://www.w3schools.com/js/pic_navigate.gif" /></p>
+<h3>DOM interface</h3>
+<p>Finding HTML Element:</p>
+<div class="highlight"><pre><span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">()</span>
+<span class="n">document</span><span class="p">.</span><span class="n">getElementByTagName</span><span class="p">()</span>
+<span class="n">document</span><span class="p">.</span><span class="n">getElementByClassName</span><span class="p">()</span>  <span class="c1">//not supported by ie 5 6 7</span>
+</pre></div>
+
+
+<p>Changing HTML Elements:</p>
+<div class="highlight"><pre><span class="n">element</span><span class="p">.</span><span class="n">innerHTML</span><span class="o">=</span>
+<span class="n">element</span><span class="p">.</span><span class="n">attribute</span><span class="o">=</span>
+<span class="n">element</span><span class="p">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
+<span class="n">element</span><span class="p">.</span><span class="n">style</span><span class="p">.</span><span class="n">property</span><span class="o">=</span>
+</pre></div>
+
+
+<p>Adding and Deleting Elements</p>
+<div class="highlight"><pre><span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">()</span>
+<span class="n">document</span><span class="p">.</span><span class="n">removeChild</span><span class="p">()</span>
+<span class="n">document</span><span class="p">.</span><span class="n">appendChild</span><span class="p">()</span>
+<span class="n">document</span><span class="p">.</span><span class="n">replaceChild</span><span class="p">()</span>
+<span class="n">document</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Adding Event Handlers</p>
+<div class="highlight"><pre><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){}</span>
+</pre></div>
+
+
+<p>DOM标准</p>
 <h2>JavaScript</h2>
 <h3>JS Statements</h3>
 <p>exec by browser.</p>
@@ -314,53 +361,6 @@ str.replace("abc","d")
 <p><strong>toUpperCae toLowerCase</strong></p>
 <p>str.toUpperCase()
 str.toLowerCase()</p>
-<h2>DOM</h2>
-<p>The DOM Programming Interface
-DOM编程接口，DOM可以动态的被javascript被访问。</p>
-<p>The HTML DOM can be accessed with JavaScript (and with other programming languages).</p>
-<p>In the DOM, all HTML elements are defined as objects.
-在DOM模型中，所有的HTML element都是Object.编程接口就这些Object的属性和方法。</p>
-<p>The programming interface is the properties and methods of each object.</p>
-<p>A property is a value that you can get or set (like changing the content of an HTML element).</p>
-<p>A method is an action you can do (like add or deleting an HTML element).</p>
-<p>document.getElementById() is a method.
-innerHTML is property.</p>
-<h3>DOM document object</h3>
-<p><img alt="image" src="http://www.w3schools.com/js/pic_htmltree.gif" /></p>
-<p>document object代表的是整个web页面，是其他所有HTML Element 的宿主
-访问页面中元素的时，首先需要访问到document对象</p>
-<p><img alt="image" src="http://www.w3schools.com/js/pic_navigate.gif" /></p>
-<h3>DOM interface</h3>
-<p>Finding HTML Element:</p>
-<div class="highlight"><pre><span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">()</span>
-<span class="n">document</span><span class="p">.</span><span class="n">getElementByTagName</span><span class="p">()</span>
-<span class="n">document</span><span class="p">.</span><span class="n">getElementByClassName</span><span class="p">()</span>  <span class="c1">//not supported by ie 5 6 7</span>
-</pre></div>
-
-
-<p>Changing HTML Elements:</p>
-<div class="highlight"><pre><span class="n">element</span><span class="p">.</span><span class="n">innerHTML</span><span class="o">=</span>
-<span class="n">element</span><span class="p">.</span><span class="n">attribute</span><span class="o">=</span>
-<span class="n">element</span><span class="p">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>
-<span class="n">element</span><span class="p">.</span><span class="n">style</span><span class="p">.</span><span class="n">property</span><span class="o">=</span>
-</pre></div>
-
-
-<p>Adding and Deleting Elements</p>
-<div class="highlight"><pre><span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">()</span>
-<span class="n">document</span><span class="p">.</span><span class="n">removeChild</span><span class="p">()</span>
-<span class="n">document</span><span class="p">.</span><span class="n">appendChild</span><span class="p">()</span>
-<span class="n">document</span><span class="p">.</span><span class="n">replaceChild</span><span class="p">()</span>
-<span class="n">document</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Adding Event Handlers</p>
-<div class="highlight"><pre><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">id</span><span class="p">).</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){}</span>
-</pre></div>
-
-
-<p>DOM标准</p>
 <h3>Change HTML</h3>
 <ul>
 <li>HTML element的内容可以直接用innerHTML属性进行访问</li>
