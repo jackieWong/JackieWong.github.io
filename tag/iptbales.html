@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Archives - wstnap pantsw</title>
+    <title>iptbales - wstnap pantsw</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -63,18 +63,21 @@ wstnap pantsw            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="content">
-        <h1>Archives for wstnap pantsw</h1>
+            <article>
+                <h2><a href="/iptables-problem-after-rc-update-8142014.html">iptables problem after rc-update 8/14/2014</a></h2>
+                <div class="summary"><h2>背景&amp;问题产生</h2>
+<p>实验室限制ipv4流量每月2G。为了让后端设备可以顺畅的访问互联网，想出了方案
+<img alt="image" src="http://www.wstnap.com/imges/net-for-baha.png" />
+最近在Dell的小机箱安装了ubuntu.配置了openvpn client和ap-hotspot.买了linode的最低配的VPS.</p>
+<p>sysctl net.ipvt.forward=1
+iptables -t nat -s 192.168.150.0/24 -d </p>
+<p>每次开机总要输入这些命令很不爽，那只好配置开机启动服务了。不幸的事情发生了，同样在内网环境下的192.168.150.0/24 访问不了和Dell小机器位于同一网段的SharePoint 2013服务器。（之前没有发生过，）</p>
+<div class="highlight"><pre><span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">A</span> <span class="n">POSTROUTING</span> <span class="o">-</span><span class="n">s</span> <span class="mf">192.168.150.0</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">j</span> <span class="n">SNAT</span> <span class="o">--</span><span class="n">to</span><span class="o">-</span><span class="n">source ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="/iptables-problem-after-rc-update-8142014.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
-        <dl>
-                <dt>Thu 14 August 2014</dt>
-                <dd><a href='/iptables-problem-after-rc-update-8142014.html'>iptables problem after rc-update 8/14/2014</a></dd>
-                <dt>Thu 10 July 2014</dt>
-                <dd><a href='/js-note.html'>JS Note</a></dd>
-                <dt>Fri 04 July 2014</dt>
-                <dd><a href='/74-byeru-xi.html'>7/4 Bye儒西</a></dd>
-        </dl>
-    </section>
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">
 
