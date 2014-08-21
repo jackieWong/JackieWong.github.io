@@ -43,7 +43,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h3&gt;### related links&lt;/h3&gt;
+&lt;h3&gt;related links&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://www.cnblogs.com/dudu/p/ajax_302_found.html"&gt;cnblogs: jax与302响应&lt;/a&gt;&lt;/p&gt;</summary><category term="JavaScript"></category></entry><entry><title>iptables problem after rc-update</title><link href="/iptables-problem-after-rc-update.html" rel="alternate"></link><updated>2014-08-14T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-08-14:iptables-problem-after-rc-update.html</id><summary type="html">&lt;h3&gt;背景&amp;amp;问题产生&lt;/h3&gt;
 &lt;p&gt;实验室限制ipv4流量每月2G。为了让后端设备可以顺畅的访问互联网，想出了方案
 &lt;img alt="image" src="http://www.wstnap.com/images/net-for-baha.png" /&gt;
