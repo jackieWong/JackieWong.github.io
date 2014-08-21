@@ -90,7 +90,7 @@ wstnap            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h2>背景&amp;问题产生</h2>
+                <h3>背景&amp;问题产生</h3>
 <p>实验室限制ipv4流量每月2G。为了让后端设备可以顺畅的访问互联网，想出了方案
 <img alt="image" src="http://www.wstnap.com/images/net-for-baha.png" />
 最近在Dell的小机箱安装了ubuntu.配置了openvpn client和ap-hotspot.买了linode的最低配的VPS.</p>
@@ -102,7 +102,7 @@ iptables -t nat -s 192.168.150.0/24 -d </p>
 
 
 <p>在linux完成routing之后还没有送出包之前。将数据包的原地址修改为 10.8.0.10 完成SNAT(原地址转换)</p>
-<h2>思考</h2>
+<h3>思考</h3>
 <ol>
 <li>
 <p>查看arp</p>
@@ -132,9 +132,9 @@ iptables -t nat -s 192.168.150.0/24 -d </p>
 <p>猜想是iptables的问题，没有转发or sth else.</p>
 </li>
 </ol>
-<h2>解决</h2>
+<h3>解决</h3>
 <p>iptables -t nat -A POSTROUTING -d 192.168.1.0/24 -j SNAT --to-source 192.168.1.166</p>
-<h2>总结</h2>
+<h3>总结</h3>
 <ol>
 <li>tcpdump</li>
 <li>iptables配置</li>
@@ -169,13 +169,13 @@ iptables -t nat -s 192.168.150.0/24 -d </p>
                 <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group" id="tags">
                         <li class="list-group-item tag-4">
-                            <a href="/tag/javascript.html">
-                                JavaScript
+                            <a href="/tag/iptables.html">
+                                iptables
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/iptables.html">
-                                iptables
+                            <a href="/tag/javascript.html">
+                                JavaScript
                             </a>
                         </li>
                     </ul>

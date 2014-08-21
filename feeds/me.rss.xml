@@ -44,7 +44,7 @@
 
 
 &lt;h2&gt;related links&lt;/h2&gt;
-&lt;p&gt;&lt;a href="http://www.cnblogs.com/dudu/p/ajax_302_found.html"&gt;cnblogs: jax与302响应&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Thu, 21 Aug 2014 00:00:00 +0200</pubDate><guid>tag:,2014-08-21:ajax-302.html</guid><category>JavaScript</category></item><item><title>iptables problem after rc-update</title><link>/iptables-problem-after-rc-update.html</link><description>&lt;h2&gt;背景&amp;amp;问题产生&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.cnblogs.com/dudu/p/ajax_302_found.html"&gt;cnblogs: jax与302响应&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Thu, 21 Aug 2014 00:00:00 +0200</pubDate><guid>tag:,2014-08-21:ajax-302.html</guid><category>JavaScript</category></item><item><title>iptables problem after rc-update</title><link>/iptables-problem-after-rc-update.html</link><description>&lt;h3&gt;背景&amp;amp;问题产生&lt;/h3&gt;
 &lt;p&gt;实验室限制ipv4流量每月2G。为了让后端设备可以顺畅的访问互联网，想出了方案
 &lt;img alt="image" src="http://www.wstnap.com/images/net-for-baha.png" /&gt;
 最近在Dell的小机箱安装了ubuntu.配置了openvpn client和ap-hotspot.买了linode的最低配的VPS.&lt;/p&gt;
@@ -56,7 +56,7 @@ iptables -t nat -s 192.168.150.0/24 -d &lt;/p&gt;
 
 
 &lt;p&gt;在linux完成routing之后还没有送出包之前。将数据包的原地址修改为 10.8.0.10 完成SNAT(原地址转换)&lt;/p&gt;
-&lt;h2&gt;思考&lt;/h2&gt;
+&lt;h3&gt;思考&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;查看arp&lt;/p&gt;
@@ -86,9 +86,9 @@ iptables -t nat -s 192.168.150.0/24 -d &lt;/p&gt;
 &lt;p&gt;猜想是iptables的问题，没有转发or sth else.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2&gt;解决&lt;/h2&gt;
+&lt;h3&gt;解决&lt;/h3&gt;
 &lt;p&gt;iptables -t nat -A POSTROUTING -d 192.168.1.0/24 -j SNAT --to-source 192.168.1.166&lt;/p&gt;
-&lt;h2&gt;总结&lt;/h2&gt;
+&lt;h3&gt;总结&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;tcpdump&lt;/li&gt;
 &lt;li&gt;iptables配置&lt;/li&gt;
