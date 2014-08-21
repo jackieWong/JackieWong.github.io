@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>wstnap</title><link href="/" rel="alternate"></link><link href="/feeds/me.atom.xml" rel="self"></link><id>/</id><updated>2014-08-21T00:00:00+02:00</updated><entry><title>ajax &amp; 302</title><link href="/ajax-302.html" rel="alternate"></link><updated>2014-08-21T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-08-21:ajax-302.html</id><summary type="html">&lt;h2&gt;HTTP 302&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>wstnap</title><link href="/" rel="alternate"></link><link href="/feeds/me.atom.xml" rel="self"></link><id>/</id><updated>2014-08-21T00:00:00+02:00</updated><entry><title>ajax &amp; 302</title><link href="/ajax-302.html" rel="alternate"></link><updated>2014-08-21T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-08-21:ajax-302.html</id><summary type="html">&lt;h3&gt;HTTP 302&lt;/h3&gt;
 &lt;p&gt;HTTP 302 response code mean the page is Moved Temporarily.&lt;/p&gt;
 &lt;p&gt;When server return this code, it will also give an &lt;code&gt;Location: http://xxx&lt;/code&gt; field, in which browser will find a new URL to send another request.&lt;/p&gt;
 &lt;p&gt;Also see: &lt;a href="http://en.wikipedia.org/wiki/HTTP_302"&gt;wiki/HTTP 302&lt;/a&gt;&lt;/p&gt;
-&lt;h2&gt;ajax cant get 302 status&lt;/h2&gt;
+&lt;h3&gt;ajax cant get 302 status&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;xhr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;XMLHttpRequest&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;span class="n"&gt;xhr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//10.8.0.1/index.php&amp;#39;, false);&lt;/span&gt;
 &lt;span class="n"&gt;xhr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
@@ -31,7 +31,7 @@
 &lt;p&gt;Then the content of xhr.responseText is :&lt;code&gt;This is html after redirect&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;The order is :
 &lt;code&gt;ajax -&amp;gt; browser -&amp;gt; server -&amp;gt; 302 -&amp;gt; browser(redirect) -&amp;gt; server -&amp;gt; browser -&amp;gt; ajax callback&lt;/code&gt;&lt;/p&gt;
-&lt;h2&gt;ajax readystatus&lt;/h2&gt;
+&lt;h3&gt;ajax readystatus&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;xhr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;XMLHttpRequest&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; 
 &lt;span class="n"&gt;xhr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readyState&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;     &lt;span class="c1"&gt;//0&lt;/span&gt;
 
@@ -43,7 +43,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;h2&gt;related links&lt;/h2&gt;
+&lt;h3&gt;### related links&lt;/h3&gt;
 &lt;p&gt;&lt;a href="http://www.cnblogs.com/dudu/p/ajax_302_found.html"&gt;cnblogs: jax与302响应&lt;/a&gt;&lt;/p&gt;</summary><category term="JavaScript"></category></entry><entry><title>iptables problem after rc-update</title><link href="/iptables-problem-after-rc-update.html" rel="alternate"></link><updated>2014-08-14T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-08-14:iptables-problem-after-rc-update.html</id><summary type="html">&lt;h3&gt;背景&amp;amp;问题产生&lt;/h3&gt;
 &lt;p&gt;实验室限制ipv4流量每月2G。为了让后端设备可以顺畅的访问互联网，想出了方案
 &lt;img alt="image" src="http://www.wstnap.com/images/net-for-baha.png" /&gt;

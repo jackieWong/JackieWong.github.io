@@ -90,11 +90,11 @@ wstnap            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h2>HTTP 302</h2>
+                <h3>HTTP 302</h3>
 <p>HTTP 302 response code mean the page is Moved Temporarily.</p>
 <p>When server return this code, it will also give an <code>Location: http://xxx</code> field, in which browser will find a new URL to send another request.</p>
 <p>Also see: <a href="http://en.wikipedia.org/wiki/HTTP_302">wiki/HTTP 302</a></p>
-<h2>ajax cant get 302 status</h2>
+<h3>ajax cant get 302 status</h3>
 <div class="highlight"><pre><span class="n">xhr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">XMLHttpRequest</span><span class="p">();</span>
 <span class="n">xhr</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="err">&#39;</span><span class="n">get</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">http</span><span class="o">:</span><span class="c1">//10.8.0.1/index.php&#39;, false);</span>
 <span class="n">xhr</span><span class="p">.</span><span class="n">send</span><span class="p">();</span>
@@ -122,7 +122,7 @@ wstnap            </a>
 <p>Then the content of xhr.responseText is :<code>This is html after redirect</code></p>
 <p>The order is :
 <code>ajax -&gt; browser -&gt; server -&gt; 302 -&gt; browser(redirect) -&gt; server -&gt; browser -&gt; ajax callback</code></p>
-<h2>ajax readystatus</h2>
+<h3>ajax readystatus</h3>
 <div class="highlight"><pre><span class="n">xhr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">XMLHttpRequest</span><span class="p">();</span> 
 <span class="n">xhr</span><span class="p">.</span><span class="n">readyState</span><span class="p">;</span>     <span class="c1">//0</span>
 
@@ -134,7 +134,7 @@ wstnap            </a>
 </pre></div>
 
 
-<h2>related links</h2>
+<h3>### related links</h3>
 <p><a href="http://www.cnblogs.com/dudu/p/ajax_302_found.html">cnblogs: jax与302响应</a></p>
             </div>
             <!-- /.entry-content -->
@@ -166,13 +166,13 @@ wstnap            </a>
                 <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group" id="tags">
                         <li class="list-group-item tag-4">
-                            <a href="/tag/iptables.html">
-                                iptables
+                            <a href="/tag/javascript.html">
+                                JavaScript
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/javascript.html">
-                                JavaScript
+                            <a href="/tag/iptables.html">
+                                iptables
                             </a>
                         </li>
                     </ul>
