@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>wstnap</title><link href="/" rel="alternate"></link><link href="/feeds/me.atom.xml" rel="self"></link><id>/</id><updated>2014-08-14T00:00:00+02:00</updated><entry><title>iptables problem after rc-update 8/14/2014</title><link href="/iptables-problem-after-rc-update-8142014.html" rel="alternate"></link><updated>2014-08-14T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-08-14:iptables-problem-after-rc-update-8142014.html</id><summary type="html">&lt;h2&gt;背景&amp;amp;问题产生&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>wstnap</title><link href="/" rel="alternate"></link><link href="/feeds/me.atom.xml" rel="self"></link><id>/</id><updated>2014-08-21T00:00:00+02:00</updated><entry><title>ajax &amp; 302</title><link href="/ajax-302.html" rel="alternate"></link><updated>2014-08-21T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-08-21:ajax-302.html</id><summary type="html">&lt;h2&gt;HTTP 302&lt;/h2&gt;
+&lt;p&gt;HTTP 302 response code mean the page is Moved Temporarily.&lt;/p&gt;
+&lt;p&gt;When server return this code, it will also give an &lt;code&gt;Location: http://xxx&lt;/code&gt; field, in which browser will find a new URL to send another request.&lt;/p&gt;
+&lt;p&gt;Also see: &lt;a href="http://en.wikipedia.org/wiki/HTTP_302"&gt;wiki/HTTP 302&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;ajax cant get 302 status&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;xhr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;XMLHttpRequest&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="n"&gt;xhr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//10.8.0.1/index.php&amp;#39;, false);&lt;/span&gt;
+&lt;span class="n"&gt;xhr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+&lt;span class="n"&gt;xhr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;   &lt;span class="c1"&gt;//if no error happened, 200&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;But what's in xhr.responseText.&lt;/p&gt;
+&lt;p&gt;Suppose we have two file: index.php &amp;amp; re.html.&lt;/p&gt;
+&lt;p&gt;index.php use function header() to redirect to re.html.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;index.php&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;lt;?&lt;/span&gt;&lt;span class="nt"&gt;php&lt;/span&gt;
+    &lt;span class="nt"&gt;echo&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;This is php&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+    &lt;span class="nt"&gt;header&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Location: http://10.8.0.1/re.html&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;span class="o"&gt;?&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;re.html&lt;/strong&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;p&amp;gt;&lt;/span&gt;This is html after redirect&lt;span class="nt"&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Then the content of xhr.responseText is :&lt;code&gt;This is html after redirect&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The order is :
+&lt;code&gt;ajax -&amp;gt; browser -&amp;gt; server -&amp;gt; 302 -&amp;gt; browser(redirect) -&amp;gt; server -&amp;gt; browser -&amp;gt; ajax callback&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;ajax readystatus&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;xhr&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;new&lt;/span&gt; &lt;span class="n"&gt;XMLHttpRequest&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt; 
+&lt;span class="n"&gt;xhr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readyState&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;     &lt;span class="c1"&gt;//0&lt;/span&gt;
+
+&lt;span class="n"&gt;xhr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;open&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="n"&gt;xhr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readyState&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;     &lt;span class="c1"&gt;//1&lt;/span&gt;
+
+&lt;span class="n"&gt;xhr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+&lt;span class="n"&gt;xhr&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;readyState&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;     &lt;span class="c1"&gt;//4&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;related links&lt;/h2&gt;
+&lt;p&gt;&lt;a href="http://www.cnblogs.com/dudu/p/ajax_302_found.html"&gt;cnblogs: jax与302响应&lt;/a&gt;&lt;/p&gt;</summary><category term="JavaScript"></category></entry><entry><title>iptables problem after rc-update</title><link href="/iptables-problem-after-rc-update.html" rel="alternate"></link><updated>2014-08-14T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-08-14:iptables-problem-after-rc-update.html</id><summary type="html">&lt;h2&gt;背景&amp;amp;问题产生&lt;/h2&gt;
 &lt;p&gt;实验室限制ipv4流量每月2G。为了让后端设备可以顺畅的访问互联网，想出了方案
 &lt;img alt="image" src="http://www.wstnap.com/images/net-for-baha.png" /&gt;
 最近在Dell的小机箱安装了ubuntu.配置了openvpn client和ap-hotspot.买了linode的最低配的VPS.&lt;/p&gt;
@@ -47,7 +92,7 @@ iptables -t nat -s 192.168.150.0/24 -d &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;tcpdump&lt;/li&gt;
 &lt;li&gt;iptables配置&lt;/li&gt;
-&lt;/ol&gt;</summary><category term="iptbales"></category></entry><entry><title>JS Note</title><link href="/js-note.html" rel="alternate"></link><updated>2014-07-10T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-07-10:js-note.html</id><summary type="html">&lt;p&gt;&lt;strong&gt; Web Deveslop&lt;/strong&gt;&lt;/p&gt;
+&lt;/ol&gt;</summary><category term="iptables"></category></entry><entry><title>JS Note</title><link href="/js-note.html" rel="alternate"></link><updated>2014-07-10T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-07-10:js-note.html</id><summary type="html">&lt;p&gt;&lt;strong&gt; Web Deveslop&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -396,5 +441,5 @@ str.toLowerCase()&lt;/p&gt;
 &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attachEvent&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attachEvent&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;onclick&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;myFunction&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="web"></category><category term="js"></category></entry><entry><title>7/4 Bye儒西</title><link href="/74-byeru-xi.html" rel="alternate"></link><updated>2014-07-04T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-07-04:74-byeru-xi.html</id><summary type="html">&lt;p&gt;每当离开的时候才意识到自己会如此低落，的确不是悲哀，宿舍只有晨哥一个人了，想起当初四人初识之际，把酒言欢。在新宿舍认识的几个人，很巧，一个是本科在同一栋宿舍生活了四年却不曾有过片语的‘老同学’；另一个是喊了很久的
-所谓‘师叔’的师兄。&lt;/p&gt;</summary><category term="生活"></category></entry></feed>
+&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>7/4 Bye RuXi</title><link href="/74-bye-ruxi.html" rel="alternate"></link><updated>2014-07-04T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-07-04:74-bye-ruxi.html</id><summary type="html">&lt;p&gt;每当离开的时候才意识到自己会如此低落，的确不是悲哀，宿舍只有晨哥一个人了，想起当初四人初识之际，把酒言欢。在新宿舍认识的几个人，很巧，一个是本科在同一栋宿舍生活了四年却不曾有过片语的‘老同学’；另一个是喊了很久的
+所谓‘师叔’的师兄。&lt;/p&gt;</summary></entry></feed>

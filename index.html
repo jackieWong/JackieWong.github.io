@@ -45,7 +45,7 @@ wstnap            </a>
                             <a href="/category/diary.html">Diary</a>
                         </li>
                         <li >
-                            <a href="/category/misc.html">Misc</a>
+                            <a href="/category/linux.html">Linux</a>
                         </li>
                         <li >
                             <a href="/category/web.html">Web</a>
@@ -64,7 +64,19 @@ wstnap            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="/iptables-problem-after-rc-update-8142014.html">iptables problem after rc-update 8/14/2014</a></h2>
+                <h2><a href="/ajax-302.html">ajax & 302</a></h2>
+                <div class="summary"><h2>HTTP 302</h2>
+<p>HTTP 302 response code mean the page is Moved Temporarily.</p>
+<p>When server return this code, it will also give an <code>Location: http://xxx</code> field, in which browser will find a new URL to send another request.</p>
+<p>Also see: <a href="http://en.wikipedia.org/wiki/HTTP_302">wiki/HTTP 302</a></p>
+<h2>ajax cant get 302 status</h2>
+<div class="highlight"><pre><span class="n">xhr</span> <span class="o">=</span> <span class="n">new ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="/ajax-302.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/iptables-problem-after-rc-update.html">iptables problem after rc-update</a></h2>
                 <div class="summary"><h2>背景&amp;问题产生</h2>
 <p>实验室限制ipv4流量每月2G。为了让后端设备可以顺畅的访问互联网，想出了方案
 <img alt="image" src="http://www.wstnap.com/images/net-for-baha.png" />
@@ -73,7 +85,7 @@ wstnap            </a>
 iptables -t nat -s 192.168.150.0/24 -d </p>
 <p>每次开机总要输入这些命令很不爽，那只好配置开机启动服务了。不幸的事情发生了，同样在内网环境下的192.168.150.0/24 访问不了和Dell小机器位于同一网段的SharePoint 2013服务器。（之前没有发生过，）</p>
 <div class="highlight"><pre><span class="n">iptables</span> <span class="o">-</span><span class="n">t</span> <span class="n">nat</span> <span class="o">-</span><span class="n">A</span> <span class="n">POSTROUTING</span> <span class="o">-</span><span class="n">s</span> <span class="mf">192.168.150.0</span><span class="o">/</span><span class="mi">24</span> <span class="o">-</span><span class="n">j</span> <span class="n">SNAT</span> <span class="o">--</span><span class="n">to</span><span class="o">-</span><span class="n">source ...</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="/iptables-problem-after-rc-update-8142014.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="/iptables-problem-after-rc-update.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -135,10 +147,10 @@ iptables -t nat -s 192.168.150.0/24 -d </p>
             </article>
             <hr/>
             <article>
-                <h2><a href="/74-byeru-xi.html">7/4 Bye儒西</a></h2>
+                <h2><a href="/74-bye-ruxi.html">7/4 Bye RuXi</a></h2>
                 <div class="summary"><p>每当离开的时候才意识到自己会如此低落，的确不是悲哀，宿舍只有晨哥一个人了，想起当初四人初识之际，把酒言欢。在新宿舍认识的几个人，很巧，一个是本科在同一栋宿舍生活了四年却不曾有过片语的‘老同学’；另一个是喊了很久的
 所谓‘师叔’的师兄。</p>
-                    <a class="btn btn-default btn-xs" href="/74-byeru-xi.html">more ...</a>
+                    <a class="btn btn-default btn-xs" href="/74-bye-ruxi.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -168,23 +180,13 @@ iptables -t nat -s 192.168.150.0/24 -d </p>
                 <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group" id="tags">
                         <li class="list-group-item tag-4">
-                            <a href="/tag/iptbales.html">
-                                iptbales
+                            <a href="/tag/javascript.html">
+                                JavaScript
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/sheng-huo.html">
-                                生活
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/js.html">
-                                js
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/web.html">
-                                web
+                            <a href="/tag/iptables.html">
+                                iptables
                             </a>
                         </li>
                     </ul>
