@@ -1,5 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wstnap</title><link>/</link><description></description><atom:link href="/feeds/me.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 21 Aug 2014 00:00:00 +0200</lastBuildDate><item><title>ajax &amp; 302</title><link>/ajax-302.html</link><description>&lt;h3&gt;HTTP 302&lt;/h3&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wstnap</title><link>/</link><description></description><atom:link href="/feeds/me.rss.xml" rel="self"></atom:link><lastBuildDate>Mon, 29 Sep 2014 00:00:00 +0200</lastBuildDate><item><title>Learning Perl-Scalar Data</title><link>/learning-perl-scalar-data.html</link><description>&lt;h2&gt;Scalar Data&lt;/h2&gt;
+&lt;h3&gt;Numbers&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;All numbers are same format internally.They are treated as double precision floating-point values.&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;Floating-Point Literals&lt;/h4&gt;
+&lt;p&gt;1.25
+25.0000
+-6.5e24
++34.01e12&lt;/p&gt;
+&lt;h4&gt;Integer Literals&lt;/h4&gt;
+&lt;p&gt;0
+2014
+-2551&lt;/p&gt;
+&lt;h4&gt;Non-Decimal Interger Literals&lt;/h4&gt;
+&lt;p&gt;base 2: 0b1110
+base 8: 0377
+base 16: 0xab&lt;/p&gt;
+&lt;h4&gt;Numeric Operators&lt;/h4&gt;
+&lt;p&gt;addition,subtraction,multiplication, and division operators&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;but modulus operator is different.It will first reduce both operants to integer values.so 10.5%2.3 is computed as 10%3.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;power operator is writen as two asterisk. 2**3 &lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;String&lt;/h3&gt;
+&lt;p&gt;Typical strings are printable sequence of letters, digits, and punctuation in the ASCII 32 to ASCII 126 rangge.
+&lt;strong&gt;However perl has the ability to have any character in a string, so it means that you can create, scan, and manipulate raw binary data as strings and that is something with which many other utilies would have freate difficulty.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;For example:
+    1. you can update an image by load it in string
+    2. you can update an complied program by load it in string&lt;/p&gt;
+&lt;h4&gt;Single-Quoted String Literals&lt;/h4&gt;
+&lt;p&gt;Any charactor other than a single quote or a backslash is between quote mark stands for itself inside a string.
+Example:
+&lt;strong&gt;\n is not a newline,but two character \ and n&lt;/strong&gt;
+'hello
+world'
+&lt;strong&gt;backslash is escape just before single quote or backslash&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;Double-Quoted String&lt;/h4&gt;
+&lt;p&gt;Double quoted string is as common as other language.&lt;/p&gt;
+&lt;p&gt;\l lowercase the next letter&lt;/p&gt;
+&lt;p&gt;\L lowercase the following letters until \E&lt;/p&gt;
+&lt;p&gt;\u uppercase the next letter&lt;/p&gt;
+&lt;p&gt;\U uppercase the following letters until \E&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;\Q quote non-word character by adding a backslash until \E&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;\E end of \l \L \u \U \Q&lt;/p&gt;
+&lt;p&gt;\cC Ctrl + C&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;\007 ASCII value 7 (base 8)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;\0x7f ASCII value (base 16)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;\n newline&lt;/p&gt;
+&lt;p&gt;\r return&lt;/p&gt;
+&lt;p&gt;\r tab&lt;/p&gt;
+&lt;h5&gt;variable interpolated&lt;/h5&gt;
+&lt;p&gt;vaiable name in double-quoted string will replaced by their data.Just like bash.&lt;/p&gt;
+&lt;h4&gt;String operator&lt;/h4&gt;
+&lt;p&gt;concatenated with . operator
+repetition: consisting of the single lowercase letter x.
+example:
+    "fred" x 3
+     "barney" x 4
+&lt;strong&gt;The copy count is just truncated to integer value.A copy count less than one result in empty&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;Automatic conversion between numbers and strings&lt;/h4&gt;
+&lt;p&gt;Perl will automatic converts between numbers and strings as needed.
+It all counts on what the operator need.
+For Example:
+"z" . 3 * 7     "z21"
+"12fred34" * 3  36&lt;/p&gt;
+&lt;h4&gt;Choosing Good Variable Name&lt;/h4&gt;
+&lt;p&gt;Similarly, properly placed underscores can make a name easier to read and understandm especially if your maintenance programmer has a different spoken language backgroud than you have.&lt;/p&gt;
+&lt;h4&gt;Scalar Assignment &amp;amp; Binary Assignment Operators&lt;/h4&gt;
+&lt;p&gt;Nearlly all binary operator has a related binary assignment operator.
+For example:
+    $fred = $fred + 5;
+    $fred += 5;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;barney&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;barney&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;barney&lt;/span&gt; &lt;span class="o"&gt;*=&lt;/span&gt; &lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;str&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;str&lt;/span&gt;  &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h4&gt;Output with print&lt;/h4&gt;
+&lt;p&gt;The print() operator make output possible.
+It take scalar argument and puts it without andy embellishment onto standard output.&lt;/p&gt;
+&lt;p&gt;print "The answer is ", 6 * 7;&lt;/p&gt;
+&lt;h4&gt;interpolation of Scalar Variable into Strings&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;When using doube quoted mark. Any scalar variable name in the string is replaced with its current value.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;But interpolation is nothing with single quote.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The variable name will be the longest possible variable name that makes sences at part of string.This may not be what you want if u just want to append sth just follow the replaed value immediately.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;$what = "apple;
+$n = 3;
+print "fred ate $n $whats"; //perl will think $whats is the variable name
+print "fred ate $n ${what} s"   //proper behavior&lt;/p&gt;
+&lt;p&gt;${ }point out what vaiable is&lt;/p&gt;
+&lt;h4&gt;Operator precedence and associativiy&lt;/h4&gt;
+&lt;p&gt;So should you just remember the precedence chart? No! Nobody does that.Instead use parenthese when you don't remember the order of operation or when you are two busy to look in the chart.&lt;/p&gt;
+&lt;h4&gt;Comparison Operators&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Comparison&lt;/th&gt;
+&lt;th&gt;Numeric&lt;/th&gt;
+&lt;th&gt;String&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Equal&lt;/td&gt;
+&lt;td&gt;==&lt;/td&gt;
+&lt;td&gt;eq&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Not equal&lt;/td&gt;
+&lt;td&gt;!=&lt;/td&gt;
+&lt;td&gt;ne&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Less than&lt;/td&gt;
+&lt;td&gt;&amp;lt;&lt;/td&gt;
+&lt;td&gt;lt&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Greater than&lt;/td&gt;
+&lt;td&gt;&amp;gt;&lt;/td&gt;
+&lt;td&gt;gt&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Less than or equal to&lt;/td&gt;
+&lt;td&gt;&amp;lt;=&lt;/td&gt;
+&lt;td&gt;le&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Greater than or equal to&lt;/td&gt;
+&lt;td&gt;&amp;gt;=&lt;/td&gt;
+&lt;td&gt;ge&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4&gt;Boolean Values&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;If the value is a number, 0 means false,others mean true&lt;/li&gt;
+&lt;li&gt;If the value is string, the empty string('') means false, all others mean true
+&lt;strong&gt;Because the string '0' is the same scalar value as the number 0, Perl has to treat them same.That means '0' is the only nonempty string that is false.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Get User Input&lt;/h4&gt;
+&lt;p&gt;Each time  you use &lt;STDIN&gt; in a place where a scalar value is expected, Perl reads the next complete text line from standard input and use that string as the value of &lt;STDIN&gt;&lt;/p&gt;
+&lt;p&gt;$line = &lt;STDIN&gt;
+if ($line eq "\n") {
+    print "That was just a blank line!\n";
+} else {
+    print "That line of input was: $line";
+}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;STDIN&gt; typically has a newline character on the end of it.&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;The chomp operator&lt;/h4&gt;
+&lt;p&gt;It works on a vaiable, and the variable has to hold a string.If the string ends in a newline character, chomp can get rid of newline.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nx"&gt;chomp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nb"&gt;STDIN&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
+
+&lt;span class="nv"&gt;$text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nb"&gt;STDIN&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nx"&gt;chomp&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$text&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;chomp is a function,as a function, it has a return value.The return value is the character being removed.&lt;/strong&gt;
+&lt;strong&gt;If a string is end with more than one new lines.chmop just remove one newline.&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;The While Control Structure&lt;/h4&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;count&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="n"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;count is now $count&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;The block curly braces are required.&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;The if Structure&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;The block curly braces are requied.(Not same as C)&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;The undef Value&lt;/h4&gt;
+&lt;p&gt;If u use an variable before you give it an value.It will act as zero for number, and as empty string.&lt;strong&gt;But undef it is not an number or a string.&lt;/strong&gt;&lt;/p&gt;
+&lt;h4&gt;The defined Function&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;One operator can return undef is line-input &lt;STDIN&gt;, use defined() function can tell if the variable is undef or is just an empty string.If variable is undef it return false, and another else it return true.&lt;/strong&gt;
+$madonna = &lt;STDIN&gt;
+if(defined($madonna)){
+    print("The input was $madonna");
+} else {
+    print("No input available!\n");
+}&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Mon, 29 Sep 2014 00:00:00 +0200</pubDate><guid>tag:,2014-09-29:learning-perl-scalar-data.html</guid></item><item><title>C++ 左值和右值</title><link>/c-zuo-zhi-he-you-zhi.html</link><description>&lt;p&gt;以下程序中，str1, str2永远是不同的地址，而str3,  str5是同样的地址,char str1[]  = "hello world"；开辟了空间，并且把"hello world"复制到里面。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;str1&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;hello world&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;str2&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;hello world&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;str3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;hello wrold&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;str4&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;hello&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;str5&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;hello wrold&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;str1&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;str2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;str1 &amp;amp; str2 are same&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;str3&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="n"&gt;str5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;str3 &amp;amp; str5 are same&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&amp;amp;(“adc” + string);&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;
+    &lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;1234&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="err"&gt;这个函数可以被调用，只是返回值不确定，返回值应该是预先分配的吧，其机制是什么样子的？&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;引用从语言级别上来说，就是对象的别名，可以用在函数参数，和函数返回值。&lt;/p&gt;
+&lt;p&gt;但是从实现上来说，引用只是语法糖，可以采用指针实现；当对引用变量初始化的时候，赋给它的值自动被取地址；当使用引用变量的时候，自动被解引用。&lt;/p&gt;
+&lt;h3&gt;&amp;amp;("hello world") &amp;amp;('h') &amp;amp;(12345)&lt;/h3&gt;
+&lt;p&gt;这就是为什么它被叫做立即数，没有地址，直接由寄存器产生。字符终究也是一个数字的表示
+但是字符串是不一样的，”hello world”被放入到了内存中。&lt;/p&gt;
+&lt;h3&gt;数字常量与&amp;amp;&lt;/h3&gt;
+&lt;p&gt;下面的语法会报错：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;但是，这个语法并不会报错：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;const&lt;/span&gt; &lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;strong&gt;const type &amp;amp;把右值的生存期延长到了和引用一样的长度。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;i＋＋ &amp;amp; ＋＋i 与左值和右值&lt;/h3&gt;
+&lt;p&gt;i＋＋返回的是一个右值：建立i的一个临时变量，对i进行＋＋，返回临时变量
+++i返回的是一个左值 ：对i进行＋＋，返回i的引用&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="vi"&gt;#include&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;iostream&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="nx"&gt;using&lt;/span&gt; &lt;span class="nx"&gt;namespace&lt;/span&gt; &lt;span class="nx"&gt;std&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="nb"&gt;class&lt;/span&gt; &lt;span class="nb"&gt;T&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="k"&gt;public&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+         &lt;span class="nb"&gt;T&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;construct&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+         &lt;span class="nb"&gt;T&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;construct 1&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;}&lt;/span&gt;
+        &lt;span class="err"&gt;~&lt;/span&gt;&lt;span class="nb"&gt;T&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;destory&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;};&lt;/span&gt;
+
+&lt;span class="nx"&gt;int&lt;/span&gt; &lt;span class="nx"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;const&lt;/span&gt; &lt;span class="nb"&gt;T&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&lt;/span&gt; &lt;span class="n"&gt;rt&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;T&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="nx"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot; des it delay&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nb"&gt;T&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="nx"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;doest not delay&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="nx"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;class&lt;/span&gt; &lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nl"&gt;public:&lt;/span&gt; 
+        &lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;constuct&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kt"&gt;int&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;construct with integer parameters&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="o"&gt;~&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;destory&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;endl&lt;/span&gt;&lt;span class="p"&gt;;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+        &lt;span class="n"&gt;cout&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class="s"&gt;&amp;quot; after statement&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+
+    &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="n"&gt;T&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;T() T(1)产生的对象的生存期只存在一句话中，
+    coustuct
+    construct with integer parameters
+    after statement&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Fri, 29 Aug 2014 00:00:00 +0200</pubDate><guid>tag:,2014-08-29:c-zuo-zhi-he-you-zhi.html</guid><category>c++</category><category>rvalue</category><category>lvalue</category></item><item><title>ajax &amp; 302</title><link>/ajax-302.html</link><description>&lt;h3&gt;HTTP 302&lt;/h3&gt;
 &lt;p&gt;HTTP 302 response code mean the page is Moved Temporarily.&lt;/p&gt;
 &lt;p&gt;When server return this code, it will also give an &lt;code&gt;Location: http://xxx&lt;/code&gt; field, in which browser will find a new URL to send another request.&lt;/p&gt;
 &lt;p&gt;Also see: &lt;a href="http://en.wikipedia.org/wiki/HTTP_302"&gt;wiki/HTTP 302&lt;/a&gt;&lt;/p&gt;

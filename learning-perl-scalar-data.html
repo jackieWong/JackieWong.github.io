@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Learning Perl-Scalar Data - wstnap</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- Open Graph tags -->
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Learning Perl-Scalar Data"/>
+            <meta property="og:url" content="/learning-perl-scalar-data.html"/>
+            <meta property="og:description" content="Scalar Data Numbers All numbers are same format internally.They are treated as double precision floating-point values. Floating-Point Literals 1.25 25.0000 -6.5e24 +34.01e12 Integer Literals 0 2014 -2551 Non-Decimal Interger Literals base 2: 0b1110 base 8: 0377 base 16: 0xab Numeric Operators addition,subtraction,multiplication, and ..."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+wstnap            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/diary.html">Diary</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/learning-perl.html">Learning perl</a>
+                        </li>
+                        <li >
+                            <a href="/category/linux.html">Linux</a>
+                        </li>
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="/category/web.html">Web</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/learning-perl-scalar-data.html"
+                       rel="bookmark"
+                       title="Permalink to Learning Perl-Scalar Data">
+                        Learning Perl-Scalar Data
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-09-29T00:00:00"> Mon 29 September 2014</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>Scalar Data</h2>
+<h3>Numbers</h3>
+<p><strong>All numbers are same format internally.They are treated as double precision floating-point values.</strong></p>
+<h4>Floating-Point Literals</h4>
+<p>1.25
+25.0000
+-6.5e24
++34.01e12</p>
+<h4>Integer Literals</h4>
+<p>0
+2014
+-2551</p>
+<h4>Non-Decimal Interger Literals</h4>
+<p>base 2: 0b1110
+base 8: 0377
+base 16: 0xab</p>
+<h4>Numeric Operators</h4>
+<p>addition,subtraction,multiplication, and division operators</p>
+<p><strong>but modulus operator is different.It will first reduce both operants to integer values.so 10.5%2.3 is computed as 10%3.</strong></p>
+<p><strong>power operator is writen as two asterisk. 2**3 </strong></p>
+<h3>String</h3>
+<p>Typical strings are printable sequence of letters, digits, and punctuation in the ASCII 32 to ASCII 126 rangge.
+<strong>However perl has the ability to have any character in a string, so it means that you can create, scan, and manipulate raw binary data as strings and that is something with which many other utilies would have freate difficulty.</strong></p>
+<p>For example:
+    1. you can update an image by load it in string
+    2. you can update an complied program by load it in string</p>
+<h4>Single-Quoted String Literals</h4>
+<p>Any charactor other than a single quote or a backslash is between quote mark stands for itself inside a string.
+Example:
+<strong>\n is not a newline,but two character \ and n</strong>
+'hello
+world'
+<strong>backslash is escape just before single quote or backslash</strong></p>
+<h4>Double-Quoted String</h4>
+<p>Double quoted string is as common as other language.</p>
+<p>\l lowercase the next letter</p>
+<p>\L lowercase the following letters until \E</p>
+<p>\u uppercase the next letter</p>
+<p>\U uppercase the following letters until \E</p>
+<p><strong>\Q quote non-word character by adding a backslash until \E</strong></p>
+<p>\E end of \l \L \u \U \Q</p>
+<p>\cC Ctrl + C</p>
+<p><strong>\007 ASCII value 7 (base 8)</strong></p>
+<p><strong>\0x7f ASCII value (base 16)</strong></p>
+<p>\n newline</p>
+<p>\r return</p>
+<p>\r tab</p>
+<h5>variable interpolated</h5>
+<p>vaiable name in double-quoted string will replaced by their data.Just like bash.</p>
+<h4>String operator</h4>
+<p>concatenated with . operator
+repetition: consisting of the single lowercase letter x.
+example:
+    "fred" x 3
+     "barney" x 4
+<strong>The copy count is just truncated to integer value.A copy count less than one result in empty</strong></p>
+<h4>Automatic conversion between numbers and strings</h4>
+<p>Perl will automatic converts between numbers and strings as needed.
+It all counts on what the operator need.
+For Example:
+"z" . 3 * 7     "z21"
+"12fred34" * 3  36</p>
+<h4>Choosing Good Variable Name</h4>
+<p>Similarly, properly placed underscores can make a name easier to read and understandm especially if your maintenance programmer has a different spoken language backgroud than you have.</p>
+<h4>Scalar Assignment &amp; Binary Assignment Operators</h4>
+<p>Nearlly all binary operator has a related binary assignment operator.
+For example:
+    $fred = $fred + 5;
+    $fred += 5;</p>
+<div class="highlight"><pre><span class="err">$</span><span class="n">barney</span> <span class="o">=</span> <span class="err">$</span><span class="n">barney</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+<span class="err">$</span><span class="n">barney</span> <span class="o">*=</span> <span class="mi">3</span><span class="p">;</span>
+
+<span class="err">$</span><span class="n">str</span> <span class="o">=</span> <span class="err">$</span><span class="n">str</span> <span class="p">.</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+<span class="err">$</span><span class="n">str</span>  <span class="p">.</span><span class="o">=</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+</pre></div>
+
+
+<h4>Output with print</h4>
+<p>The print() operator make output possible.
+It take scalar argument and puts it without andy embellishment onto standard output.</p>
+<p>print "The answer is ", 6 * 7;</p>
+<h4>interpolation of Scalar Variable into Strings</h4>
+<p><strong>When using doube quoted mark. Any scalar variable name in the string is replaced with its current value.</strong></p>
+<p>But interpolation is nothing with single quote.</p>
+<p><strong>The variable name will be the longest possible variable name that makes sences at part of string.This may not be what you want if u just want to append sth just follow the replaed value immediately.</strong></p>
+<p>$what = "apple;
+$n = 3;
+print "fred ate $n $whats"; //perl will think $whats is the variable name
+print "fred ate $n ${what} s"   //proper behavior</p>
+<p>${ }point out what vaiable is</p>
+<h4>Operator precedence and associativiy</h4>
+<p>So should you just remember the precedence chart? No! Nobody does that.Instead use parenthese when you don't remember the order of operation or when you are two busy to look in the chart.</p>
+<h4>Comparison Operators</h4>
+<table>
+<thead>
+<tr>
+<th>Comparison</th>
+<th>Numeric</th>
+<th>String</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Equal</td>
+<td>==</td>
+<td>eq</td>
+</tr>
+<tr>
+<td>Not equal</td>
+<td>!=</td>
+<td>ne</td>
+</tr>
+<tr>
+<td>Less than</td>
+<td>&lt;</td>
+<td>lt</td>
+</tr>
+<tr>
+<td>Greater than</td>
+<td>&gt;</td>
+<td>gt</td>
+</tr>
+<tr>
+<td>Less than or equal to</td>
+<td>&lt;=</td>
+<td>le</td>
+</tr>
+<tr>
+<td>Greater than or equal to</td>
+<td>&gt;=</td>
+<td>ge</td>
+</tr>
+</tbody>
+</table>
+<h4>Boolean Values</h4>
+<ul>
+<li>If the value is a number, 0 means false,others mean true</li>
+<li>If the value is string, the empty string('') means false, all others mean true
+<strong>Because the string '0' is the same scalar value as the number 0, Perl has to treat them same.That means '0' is the only nonempty string that is false.</strong></li>
+</ul>
+<h4>Get User Input</h4>
+<p>Each time  you use <STDIN> in a place where a scalar value is expected, Perl reads the next complete text line from standard input and use that string as the value of <STDIN></p>
+<p>$line = <STDIN>
+if ($line eq "\n") {
+    print "That was just a blank line!\n";
+} else {
+    print "That line of input was: $line";
+}</p>
+<p><strong><STDIN> typically has a newline character on the end of it.</strong></p>
+<h4>The chomp operator</h4>
+<p>It works on a vaiable, and the variable has to hold a string.If the string ends in a newline character, chomp can get rid of newline.</p>
+<div class="highlight"><pre><span class="nx">chomp</span><span class="p">(</span><span class="nv">$text</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nb">STDIN</span><span class="o">&gt;</span> <span class="p">)</span> <span class="p">;</span>
+
+<span class="nv">$text</span> <span class="o">=</span> <span class="o">&lt;</span><span class="nb">STDIN</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="nx">chomp</span><span class="p">(</span><span class="nv">$text</span><span class="p">);</span>
+</pre></div>
+
+
+<p><strong>chomp is a function,as a function, it has a return value.The return value is the character being removed.</strong>
+<strong>If a string is end with more than one new lines.chmop just remove one newline.</strong></p>
+<h4>The While Control Structure</h4>
+<div class="highlight"><pre><span class="err">$</span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="p">(</span><span class="err">$</span><span class="n">count</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="err">$</span><span class="n">count</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">print</span><span class="p">(</span><span class="s">&quot;count is now $count</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p><strong>The block curly braces are required.</strong></p>
+<h4>The if Structure</h4>
+<p><strong>The block curly braces are requied.(Not same as C)</strong></p>
+<h4>The undef Value</h4>
+<p>If u use an variable before you give it an value.It will act as zero for number, and as empty string.<strong>But undef it is not an number or a string.</strong></p>
+<h4>The defined Function</h4>
+<p><strong>One operator can return undef is line-input <STDIN>, use defined() function can tell if the variable is undef or is just an empty string.If variable is undef it return false, and another else it return true.</strong>
+$madonna = <STDIN>
+if(defined($madonna)){
+    print("The input was $madonna");
+} else {
+    print("No input available!\n");
+}</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3 well well-sm" id="sidebar">
+
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+                  <ul class="list-group" id="social">
+                    <li class="list-group-item"><a href="https://www.facebook.com/wstnap"><i
+                            class="fa fa-facebook-square fa-lg"></i> facebook
+                    </a></li>
+                    <li class="list-group-item"><a href="https://twitter.com/Si__y"><i
+                            class="fa fa-twitter-square fa-lg"></i> twitter
+                    </a></li>
+                    <li class="list-group-item"><a href="https://github.com/jackieWong"><i
+                            class="fa fa-github-square fa-lg"></i> github
+                    </a></li>
+                  </ul>
+                </li>
+
+
+
+                <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                    <ul class="list-group" id="tags">
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/c.html">
+                                c++
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/iptables.html">
+                                iptables
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/javascript.html">
+                                JavaScript
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/rvalue.html">
+                                rvalue
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/lvalue.html">
+                                lvalue
+                            </a>
+                        </li>
+                    </ul>
+                </li>    
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://www.solidot.org" target="_blank">
+                solidot
+            </a>
+        </li>
+      </ul>
+    </li>
+
+        </ul>
+    </section>
+
+</aside>        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 me
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="//code.jquery.com/jquery.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+</body>
+</html>

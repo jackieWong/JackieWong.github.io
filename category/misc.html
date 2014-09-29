@@ -44,6 +44,12 @@ wstnap            </a>
                         <li >
                             <a href="/category/diary.html">Diary</a>
                         </li>
+                        <li >
+                            <a href="/category/learning-perl.html">Learning perl</a>
+                        </li>
+                        <li >
+                            <a href="/category/linux.html">Linux</a>
+                        </li>
                         <li class="active">
                             <a href="/category/misc.html">Misc</a>
                         </li>
@@ -64,22 +70,23 @@ wstnap            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="/ajax-302.html">ajax & 302</a></h2>
-                <div class="summary"><h2>HTTP 302</h2>
-<p>HTTP 302 response code mean the page is Moved Temporarily.</p>
-<p>When server return this code, it will also give an <code>Location: http://xxx</code> field, in which browser will find a new URL to send another request.</p>
-<p>Also see: <a href="http://en.wikipedia.org/wiki/HTTP_302">wiki/HTTP 302</a></p>
-<h2>ajax cant get 302 status</h2>
-<div class="highlight"><pre><span class="n">xhr</span> <span class="o">=</span> <span class="n">new ...</span></pre></div>
-                    <a class="btn btn-default btn-xs" href="/ajax-302.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="/74-byeru-xi.html">7/4 Bye儒西</a></h2>
-                <div class="summary"><p>每当离开的时候才意识到自己会如此低落，的确不是悲哀，宿舍只有晨哥一个人了，想起当初四人初识之际，把酒言欢。在新宿舍认识的几个人，很巧，一个是本科在同一栋宿舍生活了四年却不曾有过片语的‘老同学’；另一个是喊了很久的
-所谓‘师叔’的师兄。</p>
-                    <a class="btn btn-default btn-xs" href="/74-byeru-xi.html">more ...</a>
+                <h2><a href="/c-zuo-zhi-he-you-zhi.html">C++ 左值和右值</a></h2>
+                <div class="summary"><p>以下程序中，str1, str2永远是不同的地址，而str3,  str5是同样的地址,char str1[]  = "hello world"；开辟了空间，并且把"hello world"复制到里面。</p>
+<div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">str1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">str2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
+
+    <span class="kt">char</span> <span class="o">*</span><span class="n">str3</span> <span class="o">=</span> <span class="s">&quot;hello wrold&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">str4</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">str5</span> <span class="o">=</span> <span class="s">&quot;hello wrold&quot;</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">str1</span> <span class="o">==</span> <span class="n">str2</span><span class="p">)</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;str1 &amp; str2 are same&quot;</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">str3</span> <span class="o">==</span> <span class="n">str5</span><span class="p">)</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;str3 &amp; str5 are ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="/c-zuo-zhi-he-you-zhi.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -109,28 +116,28 @@ wstnap            </a>
                 <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group" id="tags">
                         <li class="list-group-item tag-4">
-                            <a href="/tag/iptbales.html">
-                                iptbales
+                            <a href="/tag/c.html">
+                                c++
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/web.html">
-                                web
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/js.html">
-                                js
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
-                            <a href="/tag/sheng-huo.html">
-                                生活
+                            <a href="/tag/iptables.html">
+                                iptables
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
                             <a href="/tag/javascript.html">
                                 JavaScript
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/rvalue.html">
+                                rvalue
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/lvalue.html">
+                                lvalue
                             </a>
                         </li>
                     </ul>

@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Archives - wstnap</title>
+    <title>c++ - wstnap</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -69,24 +69,28 @@ wstnap            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="content">
-        <h1>Archives for wstnap</h1>
+            <article>
+                <h2><a href="/c-zuo-zhi-he-you-zhi.html">C++ 左值和右值</a></h2>
+                <div class="summary"><p>以下程序中，str1, str2永远是不同的地址，而str3,  str5是同样的地址,char str1[]  = "hello world"；开辟了空间，并且把"hello world"复制到里面。</p>
+<div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">str1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">str2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
 
-        <dl>
-                <dt>Mon 29 September 2014</dt>
-                <dd><a href='/learning-perl-scalar-data.html'>Learning Perl-Scalar Data</a></dd>
-                <dt>Fri 29 August 2014</dt>
-                <dd><a href='/c-zuo-zhi-he-you-zhi.html'>C++ 左值和右值</a></dd>
-                <dt>Thu 21 August 2014</dt>
-                <dd><a href='/ajax-302.html'>ajax & 302</a></dd>
-                <dt>Thu 14 August 2014</dt>
-                <dd><a href='/iptables-problem-after-rc-update.html'>iptables problem after rc-update</a></dd>
-                <dt>Thu 10 July 2014</dt>
-                <dd><a href='/js-note.html'>JS Note</a></dd>
-                <dt>Fri 04 July 2014</dt>
-                <dd><a href='/74-bye-ruxi.html'>7/4 Bye RuXi</a></dd>
-        </dl>
-    </section>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">str3</span> <span class="o">=</span> <span class="s">&quot;hello wrold&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">str4</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">str5</span> <span class="o">=</span> <span class="s">&quot;hello wrold&quot;</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">str1</span> <span class="o">==</span> <span class="n">str2</span><span class="p">)</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;str1 &amp; str2 are same&quot;</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">str3</span> <span class="o">==</span> <span class="n">str5</span><span class="p">)</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;str3 &amp; str5 are ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="/c-zuo-zhi-he-you-zhi.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">
 

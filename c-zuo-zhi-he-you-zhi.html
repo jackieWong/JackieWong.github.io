@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>C++ 左值和右值 - wstnap</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- Open Graph tags -->
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="C++ 左值和右值"/>
+            <meta property="og:url" content="/c-zuo-zhi-he-you-zhi.html"/>
+            <meta property="og:description" content="以下程序中，str1, str2永远是不同的地址，而str3, str5是同样的地址,char str1[] = "hello world"；开辟了空间，并且把"hello world"复制到里面。 int main() { char str1[] = "hello world"; char str2[] = "hello world"; char *str3 = "hello wrold"; char *str4 = "hello"; char *str5 = "hello wrold"; if (str1 == str2) cout << "str1 & str2 are same"; if (str3 == str5) cout << "str3 & str5 are ..."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+wstnap            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/diary.html">Diary</a>
+                        </li>
+                        <li >
+                            <a href="/category/learning-perl.html">Learning perl</a>
+                        </li>
+                        <li >
+                            <a href="/category/linux.html">Linux</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="/category/web.html">Web</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/c-zuo-zhi-he-you-zhi.html"
+                       rel="bookmark"
+                       title="Permalink to C++ 左值和右值">
+                        C++ 左值和右值
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-08-29T00:00:00"> Fri 29 August 2014</time>
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="/tag/c.html">c++</a>
+        /
+	<a href="/tag/rvalue.html">rvalue</a>
+        /
+	<a href="/tag/lvalue.html">lvalue</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>以下程序中，str1, str2永远是不同的地址，而str3,  str5是同样的地址,char str1[]  = "hello world"；开辟了空间，并且把"hello world"复制到里面。</p>
+<div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">str1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">str2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
+
+    <span class="kt">char</span> <span class="o">*</span><span class="n">str3</span> <span class="o">=</span> <span class="s">&quot;hello wrold&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">str4</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">str5</span> <span class="o">=</span> <span class="s">&quot;hello wrold&quot;</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">str1</span> <span class="o">==</span> <span class="n">str2</span><span class="p">)</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;str1 &amp; str2 are same&quot;</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">str3</span> <span class="o">==</span> <span class="n">str5</span><span class="p">)</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;str3 &amp; str5 are same&quot;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>&amp;(“adc” + string);</p>
+<div class="highlight"><pre><span class="kt">int</span> <span class="o">&amp;</span> <span class="n">foo</span><span class="p">(){</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="mi">1234</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="err">这个函数可以被调用，只是返回值不确定，返回值应该是预先分配的吧，其机制是什么样子的？</span>
+</pre></div>
+
+
+<p>引用从语言级别上来说，就是对象的别名，可以用在函数参数，和函数返回值。</p>
+<p>但是从实现上来说，引用只是语法糖，可以采用指针实现；当对引用变量初始化的时候，赋给它的值自动被取地址；当使用引用变量的时候，自动被解引用。</p>
+<h3>&amp;("hello world") &amp;('h') &amp;(12345)</h3>
+<p>这就是为什么它被叫做立即数，没有地址，直接由寄存器产生。字符终究也是一个数字的表示
+但是字符串是不一样的，”hello world”被放入到了内存中。</p>
+<h3>数字常量与&amp;</h3>
+<p>下面的语法会报错：</p>
+<div class="highlight"><pre><span class="kt">int</span> <span class="o">&amp;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+
+
+<p>但是，这个语法并不会报错：</p>
+<div class="highlight"><pre><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+
+
+<p><strong>const type &amp;把右值的生存期延长到了和引用一样的长度。</strong></p>
+<h3>i＋＋ &amp; ＋＋i 与左值和右值</h3>
+<p>i＋＋返回的是一个右值：建立i的一个临时变量，对i进行＋＋，返回临时变量
+++i返回的是一个左值 ：对i进行＋＋，返回i的引用</p>
+<div class="highlight"><pre><span class="vi">#include</span> <span class="o">&lt;</span><span class="nx">iostream</span><span class="o">&gt;</span>
+<span class="nx">using</span> <span class="nx">namespace</span> <span class="nx">std</span><span class="p">;</span>
+<span class="nb">class</span> <span class="nb">T</span> <span class="p">{</span>
+    <span class="k">public</span><span class="p">:</span>
+         <span class="nb">T</span><span class="p">()</span> <span class="p">{</span> <span class="nx">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;construct&quot;</span> <span class="o">&lt;&lt;</span> <span class="nx">endl</span><span class="p">;</span>
+         <span class="nb">T</span><span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="p">{</span> <span class="nx">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;construct 1&quot;</span> <span class="o">&lt;&lt;</span> <span class="nx">endl</span><span class="p">;}</span>
+        <span class="err">~</span><span class="nb">T</span><span class="p">()</span> <span class="p">{</span> <span class="nx">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;destory&quot;</span> <span class="o">&lt;&lt;</span> <span class="nx">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">int</span> <span class="nx">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="p">{</span>
+        <span class="nx">const</span> <span class="nb">T</span> <span class="o">&amp;</span> <span class="n">rt</span> <span class="o">=</span> <span class="nb">T</span><span class="p">();</span>
+        <span class="nx">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot; des it delay&quot;</span><span class="o">&lt;&lt;</span><span class="nx">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">{</span>
+        <span class="nb">T</span><span class="p">();</span>
+        <span class="nx">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;doest not delay&quot;</span> <span class="o">&lt;&lt;</span> <span class="nx">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3></h3>
+<div class="highlight"><pre><span class="n">class</span> <span class="n">T</span><span class="p">{</span>
+    <span class="nl">public:</span> 
+        <span class="n">T</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;constuct&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+        <span class="n">T</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;construct with integer parameters&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+        <span class="o">~</span><span class="n">T</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;destory&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="p">{</span>
+        <span class="n">T</span><span class="p">();</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; after statement&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">{</span>
+        <span class="n">T</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>T() T(1)产生的对象的生存期只存在一句话中，
+    coustuct
+    construct with integer parameters
+    after statement</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3 well well-sm" id="sidebar">
+
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+                  <ul class="list-group" id="social">
+                    <li class="list-group-item"><a href="https://www.facebook.com/wstnap"><i
+                            class="fa fa-facebook-square fa-lg"></i> facebook
+                    </a></li>
+                    <li class="list-group-item"><a href="https://twitter.com/Si__y"><i
+                            class="fa fa-twitter-square fa-lg"></i> twitter
+                    </a></li>
+                    <li class="list-group-item"><a href="https://github.com/jackieWong"><i
+                            class="fa fa-github-square fa-lg"></i> github
+                    </a></li>
+                  </ul>
+                </li>
+
+
+
+                <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                    <ul class="list-group" id="tags">
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/c.html">
+                                c++
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/iptables.html">
+                                iptables
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/javascript.html">
+                                JavaScript
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/rvalue.html">
+                                rvalue
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/lvalue.html">
+                                lvalue
+                            </a>
+                        </li>
+                    </ul>
+                </li>    
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://www.solidot.org" target="_blank">
+                solidot
+            </a>
+        </li>
+      </ul>
+    </li>
+
+        </ul>
+    </section>
+
+</aside>        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 me
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="//code.jquery.com/jquery.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+</body>
+</html>

@@ -45,7 +45,13 @@ wstnap            </a>
                             <a href="/category/diary.html">Diary</a>
                         </li>
                         <li >
+                            <a href="/category/learning-perl.html">Learning perl</a>
+                        </li>
+                        <li >
                             <a href="/category/linux.html">Linux</a>
+                        </li>
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
                         </li>
                         <li >
                             <a href="/category/web.html">Web</a>
@@ -63,6 +69,51 @@ wstnap            </a>
     <div class="row">
         <div class="col-sm-9">
 
+            <article>
+                <h2><a href="/learning-perl-scalar-data.html">Learning Perl-Scalar Data</a></h2>
+                <div class="summary"><h2>Scalar Data</h2>
+<h3>Numbers</h3>
+<p><strong>All numbers are same format internally.They are treated as double precision floating-point values.</strong></p>
+<h4>Floating-Point Literals</h4>
+<p>1.25
+25.0000
+-6.5e24
++34.01e12</p>
+<h4>Integer Literals</h4>
+<p>0
+2014
+-2551</p>
+<h4>Non-Decimal Interger Literals</h4>
+<p>base 2: 0b1110
+base 8: 0377
+base 16: 0xab</p>
+<h4>Numeric Operators</h4>
+<p>addition,subtraction,multiplication, and ...</p>
+                    <a class="btn btn-default btn-xs" href="/learning-perl-scalar-data.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/c-zuo-zhi-he-you-zhi.html">C++ 左值和右值</a></h2>
+                <div class="summary"><p>以下程序中，str1, str2永远是不同的地址，而str3,  str5是同样的地址,char str1[]  = "hello world"；开辟了空间，并且把"hello world"复制到里面。</p>
+<div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">str1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">str2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
+
+    <span class="kt">char</span> <span class="o">*</span><span class="n">str3</span> <span class="o">=</span> <span class="s">&quot;hello wrold&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">str4</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">str5</span> <span class="o">=</span> <span class="s">&quot;hello wrold&quot;</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">str1</span> <span class="o">==</span> <span class="n">str2</span><span class="p">)</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;str1 &amp; str2 are same&quot;</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">str3</span> <span class="o">==</span> <span class="n">str5</span><span class="p">)</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;str3 &amp; str5 are ...</span></pre></div>
+                    <a class="btn btn-default btn-xs" href="/c-zuo-zhi-he-you-zhi.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
             <article>
                 <h2><a href="/ajax-302.html">ajax & 302</a></h2>
                 <div class="summary"><h3>HTTP 302</h3>
@@ -180,6 +231,11 @@ iptables -t nat -s 192.168.150.0/24 -d </p>
                 <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group" id="tags">
                         <li class="list-group-item tag-4">
+                            <a href="/tag/c.html">
+                                c++
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
                             <a href="/tag/iptables.html">
                                 iptables
                             </a>
@@ -187,6 +243,16 @@ iptables -t nat -s 192.168.150.0/24 -d </p>
                         <li class="list-group-item tag-4">
                             <a href="/tag/javascript.html">
                                 JavaScript
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/rvalue.html">
+                                rvalue
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/lvalue.html">
+                                lvalue
                             </a>
                         </li>
                     </ul>
