@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>ajax & 302 - wstnap</title>
+    <title>Lists And Array - wstnap</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,9 +12,9 @@
 
     <!-- Open Graph tags -->
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="ajax & 302"/>
-            <meta property="og:url" content="/ajax-302.html"/>
-            <meta property="og:description" content="HTTP 302 HTTP 302 response code mean the page is Moved Temporarily. When server return this code, it will also give an Location: http://xxx field, in which browser will find a new URL to send another request. Also see: wiki/HTTP 302 ajax cant get 302 status xhr = new ..."/>
+            <meta property="og:title" content="Lists And Array"/>
+            <meta property="og:url" content="/lists-and-array.html"/>
+            <meta property="og:description" content="What is Lists and Arrays A list is an ordered collection of scalars. An array is a variable that contains a list. To be accurate,the list is data,and the array is variable.You can have a list that isn't an array, but every array hosts a list ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
@@ -41,7 +41,7 @@ wstnap            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                        <li >
+                        <li class="active">
                             <a href="/category/learning-perl.html">Learning perl</a>
                         </li>
                         <li >
@@ -53,7 +53,7 @@ wstnap            </a>
                         <li >
                             <a href="/category/misc.html">Misc</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="/category/web.html">Web</a>
                         </li>
             </ul>
@@ -73,10 +73,10 @@ wstnap            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="/ajax-302.html"
+                    <a href="/lists-and-array.html"
                        rel="bookmark"
-                       title="Permalink to ajax & 302">
-                        ajax & 302
+                       title="Permalink to Lists And Array">
+                        Lists And Array
                     </a>
                 </h1>
             </header>
@@ -86,62 +86,63 @@ wstnap            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-08-21T00:00:00"> Thu 21 August 2014</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-09-29T00:00:00"> Mon 29 September 2014</time>
     </span>
 
 
 
-<span class="label label-default">Tags</span>
-	<a href="/tag/javascript.html">JavaScript</a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <h3>HTTP 302</h3>
-<p>HTTP 302 response code mean the page is Moved Temporarily.</p>
-<p>When server return this code, it will also give an <code>Location: http://xxx</code> field, in which browser will find a new URL to send another request.</p>
-<p>Also see: <a href="http://en.wikipedia.org/wiki/HTTP_302">wiki/HTTP 302</a></p>
-<h3>ajax cant get 302 status</h3>
-<div class="highlight"><pre><span class="n">xhr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">XMLHttpRequest</span><span class="p">();</span>
-<span class="n">xhr</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="err">&#39;</span><span class="n">get</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">http</span><span class="o">:</span><span class="c1">//10.8.0.1/index.php&#39;, false);</span>
-<span class="n">xhr</span><span class="p">.</span><span class="n">send</span><span class="p">();</span>
-
-<span class="n">xhr</span><span class="p">.</span><span class="n">status</span><span class="p">();</span>   <span class="c1">//if no error happened, 200</span>
+                <h3>What is Lists and Arrays</h3>
+<p>A list is an ordered collection of scalars.</p>
+<p>An array is a variable that contains a list.
+To be accurate,the list is data,and the array is variable.You can have a list that isn't an array, but every array hosts a list, through it may be empty.</p>
+<p><strong>Since each element is an independent scalar value, a list or array may hold numbers, strings, undef values, or any mixture of different scalar values.</strong></p>
+<h3>Accessing Elements of an Array</h3>
+<p>The array name  is from a completely separate namespace than scalar use.<strong>So you could have an array variable and a scalar name whose name are same.</strong></p>
+<div class="highlight"><pre><span class="err">$</span><span class="n">fred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;hello&quot;</span><span class="p">;</span>
+<span class="err">$</span><span class="n">fred</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;world&quot;</span><span class="p">;</span>
+<span class="err">$</span><span class="n">fred</span> <span class="o">=</span> <span class="s">&quot;hello world&quot;</span><span class="p">;</span>
 </pre></div>
 
 
-<p>But what's in xhr.responseText.</p>
-<p>Suppose we have two file: index.php &amp; re.html.</p>
-<p>index.php use function header() to redirect to re.html.</p>
-<p><strong>index.php</strong></p>
-<div class="highlight"><pre><span class="o">&lt;?</span><span class="nt">php</span>
-    <span class="nt">echo</span><span class="o">(</span><span class="s2">&quot;This is php&quot;</span><span class="o">);</span>
-    <span class="nt">header</span><span class="o">(</span><span class="s2">&quot;Location: http://10.8.0.1/re.html&quot;</span><span class="o">);</span>
-<span class="o">?&gt;</span>
+<p>if the subscript(index) is not an integer, it will be truncated to the lower integer.</p>
+<div class="highlight"><pre><span class="err">$</span><span class="n">number</span> <span class="o">=</span> <span class="mf">2.71828</span><span class="p">;</span>
+<span class="n">print</span> <span class="err">$</span><span class="n">fred</span><span class="p">[</span><span class="err">$</span><span class="n">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>   <span class="err">#</span><span class="n">Same</span> <span class="n">as</span> <span class="n">printing</span> <span class="err">$</span><span class="n">fred</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 
 
-<p><strong>re.html</strong></p>
-<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>This is html after redirect<span class="nt">&lt;/p&gt;</span>
+<p>If the subscript indicated an element that would be beyond the end of the array, the corresponding value will be undef just like an unused scalar value.</p>
+<div class="highlight"><pre><span class="err">$</span><span class="n">blank</span> <span class="o">=</span> <span class="err">$</span><span class="n">fred</span><span class="p">[</span><span class="mi">142</span><span class="n">_578</span><span class="p">];</span>  <span class="err">#</span><span class="n">undef</span>
+<span class="err">$</span><span class="n">blank</span> <span class="o">=</span> <span class="err">$</span><span class="n">what</span><span class="p">;</span>         <span class="err">#</span><span class="n">undef</span>
 </pre></div>
 
 
-<p>Then the content of xhr.responseText is :<code>This is html after redirect</code></p>
-<p>The order is :
-<code>ajax -&gt; browser -&gt; server -&gt; 302 -&gt; browser(redirect) -&gt; server -&gt; browser -&gt; ajax callback</code></p>
-<h3>ajax readystatus</h3>
-<div class="highlight"><pre><span class="n">xhr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">XMLHttpRequest</span><span class="p">();</span> 
-<span class="n">xhr</span><span class="p">.</span><span class="n">readyState</span><span class="p">;</span>     <span class="c1">//0</span>
-
-<span class="n">xhr</span><span class="p">.</span><span class="n">open</span><span class="p">();</span>
-<span class="n">xhr</span><span class="p">.</span><span class="n">readyState</span><span class="p">;</span>     <span class="c1">//1</span>
-
-<span class="n">xhr</span><span class="p">.</span><span class="n">send</span><span class="p">();</span>
-<span class="n">xhr</span><span class="p">.</span><span class="n">readyState</span><span class="p">;</span>     <span class="c1">//4</span>
+<h3>Special Array Index</h3>
+<div class="highlight"><pre><span class="err">$</span><span class="n">rock</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;redrock&quot;</span><span class="p">;</span>
+<span class="err">$</span><span class="n">rock</span><span class="p">[</span><span class="mi">99</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;schist&quot;</span><span class="p">;</span> <span class="err">#</span><span class="n">there</span> <span class="n">are</span> <span class="mi">98</span> <span class="n">undef</span> <span class="n">variable</span>
 </pre></div>
 
 
-<h3>related links</h3>
-<p><a href="http://www.cnblogs.com/dudu/p/ajax_302_found.html">cnblogs: jax与302响应</a></p>
+<p><strong>How to find the last index of array.</strong></p>
+<div class="highlight"><pre><span class="err">$#</span><span class="n">rock</span>
+</pre></div>
+
+
+<p><strong>Index can be less than zero</strong></p>
+<div class="highlight"><pre><span class="cp">#if rock just has three element</span>
+<span class="err">$</span><span class="n">rock</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;redrock&quot;</span><span class="p">;</span>
+<span class="err">$</span><span class="n">rock</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;greenrock&quot;</span><span class="p">;</span>
+<span class="err">$</span><span class="n">rock</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;bluerock&quot;</span><span class="p">;</span>
+
+<span class="n">print</span> <span class="err">$</span><span class="n">rock</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>    <span class="err">#</span><span class="n">access</span> <span class="n">the</span> <span class="n">last</span> <span class="n">element</span><span class="p">;</span>
+<span class="n">print</span> <span class="err">$</span><span class="n">rock</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">];</span>    <span class="err">#</span><span class="n">access</span> <span class="n">the</span> <span class="n">middle</span> <span class="n">element</span><span class="p">;</span>
+<span class="n">print</span> <span class="err">$</span><span class="n">rock</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">];</span>    <span class="err">#</span><span class="n">access</span> <span class="n">the</span> <span class="n">first</span> <span class="n">element</span><span class="p">;</span>
+
+<span class="o">******</span>
+<span class="n">print</span> <span class="err">$</span><span class="n">rock</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">];</span>    <span class="err">#</span><span class="n">This</span> <span class="n">should</span> <span class="n">be</span> <span class="n">an</span> <span class="n">fatal</span> <span class="n">error</span>
+</pre></div>
             </div>
             <!-- /.entry-content -->
         </article>

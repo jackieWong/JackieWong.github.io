@@ -42,10 +42,10 @@ wstnap            </a>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                         <li >
-                            <a href="/category/diary.html">Diary</a>
+                            <a href="/category/learning-perl.html">Learning perl</a>
                         </li>
                         <li >
-                            <a href="/category/learning-perl.html">Learning perl</a>
+                            <a href="/category/leetcode.html">Leetcode</a>
                         </li>
                         <li >
                             <a href="/category/linux.html">Linux</a>
@@ -70,26 +70,48 @@ wstnap            </a>
         <div class="col-sm-9">
 
             <article>
+                <h2><a href="/unique-binary-search-trees-ii.html">Unique Binary Search Trees II</a></h2>
+                <div class="summary"><h2>Unique Binary Search Trees II</h2>
+<p>Given number n, generate all structurally unique BST's(binary search trees) that store values 1..n.</p>
+<p>思路：递归
+具体描述：n个数字每个数字都有可能成为根节点，针对不同的根节点，将数组划分为1 ~ i-1, i+1 ~ n;
+然后对左右子数组构建BST。
+BST构建思路：generate函数负责构建BST，参数为起始val,终止val。从start ~ end,选不同的val作为子树根节点，同时将start ~ end划分为start ~ i - 1, i + 1 ~ end的两部分。针对两部分再次递归调用BST构造函数。假设左子树有M种结构，右子树有N种 ...</p>
+                    <a class="btn btn-default btn-xs" href="/unique-binary-search-trees-ii.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
                 <h2><a href="/learning-perl-scalar-data.html">Learning Perl-Scalar Data</a></h2>
                 <div class="summary"><h2>Scalar Data</h2>
 <h3>Numbers</h3>
 <p><strong>All numbers are same format internally.They are treated as double precision floating-point values.</strong></p>
 <h4>Floating-Point Literals</h4>
-<p>1.25
-25.0000
--6.5e24
-+34.01e12</p>
+<p>1.25</p>
+<p>25.0000</p>
+<p>-6.5e24</p>
+<p>+34.01e12</p>
 <h4>Integer Literals</h4>
-<p>0
-2014
--2551</p>
+<p>0</p>
+<p>2014</p>
+<p>-2551</p>
 <h4>Non-Decimal Interger Literals</h4>
-<p>base 2: 0b1110
-base 8: 0377
-base 16: 0xab</p>
+<p>base 2: 0b1110</p>
+<p>base 8: 0377</p>
+<p>base 16: 0xab</p>
 <h4>Numeric Operators</h4>
 <p>addition,subtraction,multiplication, and ...</p>
                     <a class="btn btn-default btn-xs" href="/learning-perl-scalar-data.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/lists-and-array.html">Lists And Array</a></h2>
+                <div class="summary"><h3>What is Lists and Arrays</h3>
+<p>A list is an ordered collection of scalars.</p>
+<p>An array is a variable that contains a list.
+To be accurate,the list is data,and the array is variable.You can have a list that isn't an array, but every array hosts a list ...</p>
+                    <a class="btn btn-default btn-xs" href="/lists-and-array.html">more ...</a>
                 </div>
             </article>
             <hr/>
@@ -197,14 +219,6 @@ iptables -t nat -s 192.168.150.0/24 -d </p>
                 </div>
             </article>
             <hr/>
-            <article>
-                <h2><a href="/74-bye-ruxi.html">7/4 Bye RuXi</a></h2>
-                <div class="summary"><p>每当离开的时候才意识到自己会如此低落，的确不是悲哀，宿舍只有晨哥一个人了，想起当初四人初识之际，把酒言欢。在新宿舍认识的几个人，很巧，一个是本科在同一栋宿舍生活了四年却不曾有过片语的‘老同学’；另一个是喊了很久的
-所谓‘师叔’的师兄。</p>
-                    <a class="btn btn-default btn-xs" href="/74-bye-ruxi.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
 
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">
@@ -231,18 +245,13 @@ iptables -t nat -s 192.168.150.0/24 -d </p>
                 <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
                     <ul class="list-group" id="tags">
                         <li class="list-group-item tag-4">
-                            <a href="/tag/c.html">
-                                c++
-                            </a>
-                        </li>
-                        <li class="list-group-item tag-4">
                             <a href="/tag/iptables.html">
                                 iptables
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/javascript.html">
-                                JavaScript
+                            <a href="/tag/lvalue.html">
+                                lvalue
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
@@ -251,8 +260,13 @@ iptables -t nat -s 192.168.150.0/24 -d </p>
                             </a>
                         </li>
                         <li class="list-group-item tag-4">
-                            <a href="/tag/lvalue.html">
-                                lvalue
+                            <a href="/tag/javascript.html">
+                                JavaScript
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/c.html">
+                                c++
                             </a>
                         </li>
                     </ul>

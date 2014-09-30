@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Unique Binary Search Trees II - wstnap</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- Open Graph tags -->
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Unique Binary Search Trees II"/>
+            <meta property="og:url" content="/unique-binary-search-trees-ii.html"/>
+            <meta property="og:description" content="Unique Binary Search Trees II Given number n, generate all structurally unique BST's(binary search trees) that store values 1..n. 思路：递归 具体描述：n个数字每个数字都有可能成为根节点，针对不同的根节点，将数组划分为1 ~ i-1, i+1 ~ n; 然后对左右子数组构建BST。 BST构建思路：generate函数负责构建BST，参数为起始val,终止val。从start ~ end,选不同的val作为子树根节点，同时将start ~ end划分为start ~ i - 1, i + 1 ~ end的两部分。针对两部分再次递归调用BST构造函数。假设左子树有M种结构，右子树有N种 ..."/>
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="/theme/css/style.css" type="text/css"/>
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand">
+wstnap            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="/category/learning-perl.html">Learning perl</a>
+                        </li>
+                        <li class="active">
+                            <a href="/category/leetcode.html">Leetcode</a>
+                        </li>
+                        <li >
+                            <a href="/category/linux.html">Linux</a>
+                        </li>
+                        <li >
+                            <a href="/category/misc.html">Misc</a>
+                        </li>
+                        <li >
+                            <a href="/category/web.html">Web</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="/unique-binary-search-trees-ii.html"
+                       rel="bookmark"
+                       title="Permalink to Unique Binary Search Trees II">
+                        Unique Binary Search Trees II
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-09-30T00:00:00"> Tue 30 September 2014</time>
+    </span>
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>Unique Binary Search Trees II</h2>
+<p>Given number n, generate all structurally unique BST's(binary search trees) that store values 1..n.</p>
+<p>思路：递归
+具体描述：n个数字每个数字都有可能成为根节点，针对不同的根节点，将数组划分为1 ~ i-1, i+1 ~ n;
+然后对左右子数组构建BST。
+BST构建思路：generate函数负责构建BST，参数为起始val,终止val。从start ~ end,选不同的val作为子树根节点，同时将start ~ end划分为start ~ i - 1, i + 1 ~ end的两部分。针对两部分再次递归调用BST构造函数。假设左子树有M种结构，右子树有N种。那么构造出来的情况一共有MN。</p>
+<div class="highlight"><pre><span class="n">class</span> <span class="n">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span> <span class="o">*&gt;</span> <span class="n">generateTrees</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span> <span class="o">*&gt;</span> <span class="n">res</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+            <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span> <span class="o">*&gt;</span> <span class="n">lV</span> <span class="o">=</span> <span class="n">generate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+            <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span> <span class="o">*&gt;</span> <span class="n">rV</span> <span class="o">=</span> <span class="n">generate</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">li</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">li</span> <span class="o">&lt;</span> <span class="n">lV</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">li</span><span class="o">++</span><span class="p">){</span>
+                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">ri</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ri</span> <span class="o">&lt;</span> <span class="n">rV</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">ri</span><span class="o">++</span><span class="p">){</span>
+                    <span class="n">TreeNode</span> <span class="o">*</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                    <span class="n">tmp</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="n">lV</span><span class="p">[</span><span class="n">li</span><span class="p">];</span>
+                    <span class="n">tmp</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">rV</span><span class="p">[</span><span class="n">ri</span><span class="p">];</span>
+                    <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span> <span class="o">*&gt;</span> <span class="n">generate</span><span class="p">(</span><span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">end</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">start</span> <span class="o">&gt;</span> <span class="n">end</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span> <span class="o">*&gt;</span> <span class="n">res</span><span class="p">;</span>
+        <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">start</span> <span class="o">==</span> <span class="n">end</span><span class="p">){</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span> <span class="o">*&gt;</span> <span class="n">res</span><span class="p">;</span>
+        <span class="n">TreeNode</span> <span class="o">*</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">start</span><span class="p">);</span>
+        <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span> <span class="o">*&gt;</span> <span class="n">res</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">end</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>           
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span> <span class="o">*&gt;</span> <span class="n">lV</span> <span class="o">=</span> <span class="n">generate</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">TreeNode</span> <span class="o">*&gt;</span> <span class="n">rV</span> <span class="o">=</span> <span class="n">generate</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">li</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">li</span> <span class="o">&lt;</span> <span class="n">lV</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">li</span><span class="o">++</span><span class="p">){</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">ri</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">ri</span> <span class="o">&lt;</span> <span class="n">rV</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">ri</span><span class="o">++</span><span class="p">){</span>
+                <span class="n">TreeNode</span> <span class="o">*</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                <span class="n">tmp</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">=</span> <span class="n">lV</span><span class="p">[</span><span class="n">li</span><span class="p">];</span>
+                <span class="n">tmp</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">=</span> <span class="n">rV</span><span class="p">[</span><span class="n">ri</span><span class="p">];</span>
+                <span class="n">res</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">};</span>
+</pre></div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3 well well-sm" id="sidebar">
+
+<aside>
+    <section>
+        <ul class="list-group list-group-flush">
+                <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+                  <ul class="list-group" id="social">
+                    <li class="list-group-item"><a href="https://www.facebook.com/wstnap"><i
+                            class="fa fa-facebook-square fa-lg"></i> facebook
+                    </a></li>
+                    <li class="list-group-item"><a href="https://twitter.com/Si__y"><i
+                            class="fa fa-twitter-square fa-lg"></i> twitter
+                    </a></li>
+                    <li class="list-group-item"><a href="https://github.com/jackieWong"><i
+                            class="fa fa-github-square fa-lg"></i> github
+                    </a></li>
+                  </ul>
+                </li>
+
+
+
+                <li class="list-group-item"><a href="/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                    <ul class="list-group" id="tags">
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/iptables.html">
+                                iptables
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/lvalue.html">
+                                lvalue
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/rvalue.html">
+                                rvalue
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/javascript.html">
+                                JavaScript
+                            </a>
+                        </li>
+                        <li class="list-group-item tag-4">
+                            <a href="/tag/c.html">
+                                c++
+                            </a>
+                        </li>
+                    </ul>
+                </li>    
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://python.org/" target="_blank">
+                Python.org
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://jinja.pocoo.org/" target="_blank">
+                Jinja2
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://www.solidot.org" target="_blank">
+                solidot
+            </a>
+        </li>
+      </ul>
+    </li>
+
+        </ul>
+    </section>
+
+</aside>        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2014 me
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="//code.jquery.com/jquery.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="/theme/js/respond.min.js"></script>
+
+</body>
+</html>

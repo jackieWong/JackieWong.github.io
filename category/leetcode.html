@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Tags - wstnap</title>
+    <title>leetcode - wstnap</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -44,7 +44,7 @@ wstnap            </a>
                         <li >
                             <a href="/category/learning-perl.html">Learning perl</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="/category/leetcode.html">Leetcode</a>
                         </li>
                         <li >
@@ -69,71 +69,19 @@ wstnap            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="tags">
-        <h1>Tags for wstnap</h1>
-        <div class="panel-group" id="accordion">            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-c">c++ <span class="badge pull-right">1</span></a>
-                    </h4>
+            <article>
+                <h2><a href="/unique-binary-search-trees-ii.html">Unique Binary Search Trees II</a></h2>
+                <div class="summary"><h2>Unique Binary Search Trees II</h2>
+<p>Given number n, generate all structurally unique BST's(binary search trees) that store values 1..n.</p>
+<p>思路：递归
+具体描述：n个数字每个数字都有可能成为根节点，针对不同的根节点，将数组划分为1 ~ i-1, i+1 ~ n;
+然后对左右子数组构建BST。
+BST构建思路：generate函数负责构建BST，参数为起始val,终止val。从start ~ end,选不同的val作为子树根节点，同时将start ~ end划分为start ~ i - 1, i + 1 ~ end的两部分。针对两部分再次递归调用BST构造函数。假设左子树有M种结构，右子树有N种 ...</p>
+                    <a class="btn btn-default btn-xs" href="/unique-binary-search-trees-ii.html">more ...</a>
                 </div>
-                <div id="collapse-c" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2014-08-29T00:00:00">Fri 29 August 2014</time></span> <a href="/c-zuo-zhi-he-you-zhi.html">C++ 左值和右值</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-iptables">iptables <span class="badge pull-right">1</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-iptables" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2014-08-14T00:00:00">Thu 14 August 2014</time></span> <a href="/iptables-problem-after-rc-update.html">iptables problem after rc-update</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-javascript">JavaScript <span class="badge pull-right">1</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-javascript" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2014-08-21T00:00:00">Thu 21 August 2014</time></span> <a href="/ajax-302.html">ajax & 302</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-lvalue">lvalue <span class="badge pull-right">1</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-lvalue" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2014-08-29T00:00:00">Fri 29 August 2014</time></span> <a href="/c-zuo-zhi-he-you-zhi.html">C++ 左值和右值</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-rvalue">rvalue <span class="badge pull-right">1</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-rvalue" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2014-08-29T00:00:00">Fri 29 August 2014</time></span> <a href="/c-zuo-zhi-he-you-zhi.html">C++ 左值和右值</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </article>
+            <hr/>
 
-    </section>
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">
 
