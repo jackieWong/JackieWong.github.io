@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>ajax & 302 - wstnap</title>
+    <title>Vim - wstnap</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -11,10 +11,10 @@
     
 
     <!-- Open Graph tags -->
-            <meta property="og:type" content="article"/>
-            <meta property="og:title" content="ajax & 302"/>
-            <meta property="og:url" content="/ajax-302.html"/>
-            <meta property="og:description" content="HTTP 302 HTTP 302 response code mean the page is Moved Temporarily. When server return this code, it will also give an Location: http://xxx field, in which browser will find a new URL to send another request. Also see: wiki/HTTP 302 ajax cant get 302 status xhr = new ..."/>
+            <meta property="og:type" content="website"/>
+            <meta property="og:title" content="wstnap"/>
+            <meta property="og:url" content=""/>
+            <meta property="og:description" content="wstnap"/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="/theme/css/bootstrap.min.css" type="text/css"/>
@@ -53,10 +53,10 @@ wstnap            </a>
                         <li >
                             <a href="/category/misc.html">Misc</a>
                         </li>
-                        <li >
+                        <li class="active">
                             <a href="/category/vim.html">Vim</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="/category/web.html">Web</a>
                         </li>
             </ul>
@@ -72,83 +72,37 @@ wstnap            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="content">
-        <article>
-            <header class="page-header">
-                <h1>
-                    <a href="/ajax-302.html"
-                       rel="bookmark"
-                       title="Permalink to ajax & 302">
-                        ajax & 302
-                    </a>
-                </h1>
-            </header>
-            <div class="entry-content">
-                <div class="panel">
-                    <div class="panel-body">
-<footer class="post-info">
-    <span class="label label-default">Date</span>
-    <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-08-21T00:00:00"> Thu 21 August 2014</time>
-    </span>
-
-
-
-<span class="label label-default">Tags</span>
-	<a href="/tag/javascript.html">JavaScript</a>
-    
-</footer><!-- /.post-info -->                    </div>
+            <article>
+                <h2><a href="/basic-editing.html">Basic Editing</a></h2>
+                <div class="summary"><h2>Basic Editing</h2>
+<h4>Inserting Text</h4>
+<p>i       insert before current cursor
+a       insert after current cursor</p>
+<h4>Open up new lines</h4>
+<p>o       new line below current line
+O       new line before current line</p>
+<h4>Moving Around</h4>
+<p>h       left
+l       right
+k       up
+j       down</p>
+<h4>Delete Character</h4>
+<p>x</p>
+<h4>Delete a line</h4>
+<p>dd</p>
+<h4>Undo and Redo ...</h4>
+                    <a class="btn btn-default btn-xs" href="/basic-editing.html">more ...</a>
                 </div>
-                <h3>HTTP 302</h3>
-<p>HTTP 302 response code mean the page is Moved Temporarily.</p>
-<p>When server return this code, it will also give an <code>Location: http://xxx</code> field, in which browser will find a new URL to send another request.</p>
-<p>Also see: <a href="http://en.wikipedia.org/wiki/HTTP_302">wiki/HTTP 302</a></p>
-<h3>ajax cant get 302 status</h3>
-<div class="highlight"><pre><span class="n">xhr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">XMLHttpRequest</span><span class="p">();</span>
-<span class="n">xhr</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="err">&#39;</span><span class="n">get</span><span class="err">&#39;</span><span class="p">,</span> <span class="err">&#39;</span><span class="n">http</span><span class="o">:</span><span class="c1">//10.8.0.1/index.php&#39;, false);</span>
-<span class="n">xhr</span><span class="p">.</span><span class="n">send</span><span class="p">();</span>
-
-<span class="n">xhr</span><span class="p">.</span><span class="n">status</span><span class="p">();</span>   <span class="c1">//if no error happened, 200</span>
-</pre></div>
-
-
-<p>But what's in xhr.responseText.</p>
-<p>Suppose we have two file: index.php &amp; re.html.</p>
-<p>index.php use function header() to redirect to re.html.</p>
-<p><strong>index.php</strong></p>
-<div class="highlight"><pre><span class="o">&lt;?</span><span class="nt">php</span>
-    <span class="nt">echo</span><span class="o">(</span><span class="s2">&quot;This is php&quot;</span><span class="o">);</span>
-    <span class="nt">header</span><span class="o">(</span><span class="s2">&quot;Location: http://10.8.0.1/re.html&quot;</span><span class="o">);</span>
-<span class="o">?&gt;</span>
-</pre></div>
-
-
-<p><strong>re.html</strong></p>
-<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>This is html after redirect<span class="nt">&lt;/p&gt;</span>
-</pre></div>
-
-
-<p>Then the content of xhr.responseText is :<code>This is html after redirect</code></p>
-<p>The order is :
-<code>ajax -&gt; browser -&gt; server -&gt; 302 -&gt; browser(redirect) -&gt; server -&gt; browser -&gt; ajax callback</code></p>
-<h3>ajax readystatus</h3>
-<div class="highlight"><pre><span class="n">xhr</span> <span class="o">=</span> <span class="n">new</span> <span class="n">XMLHttpRequest</span><span class="p">();</span> 
-<span class="n">xhr</span><span class="p">.</span><span class="n">readyState</span><span class="p">;</span>     <span class="c1">//0</span>
-
-<span class="n">xhr</span><span class="p">.</span><span class="n">open</span><span class="p">();</span>
-<span class="n">xhr</span><span class="p">.</span><span class="n">readyState</span><span class="p">;</span>     <span class="c1">//1</span>
-
-<span class="n">xhr</span><span class="p">.</span><span class="n">send</span><span class="p">();</span>
-<span class="n">xhr</span><span class="p">.</span><span class="n">readyState</span><span class="p">;</span>     <span class="c1">//4</span>
-</pre></div>
-
-
-<h3>related links</h3>
-<p><a href="http://www.cnblogs.com/dudu/p/ajax_302_found.html">cnblogs: jax与302响应</a></p>
-            </div>
-            <!-- /.entry-content -->
-        </article>
-    </section>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="/build-my-own-vim.html">Build my own vim</a></h2>
+                <div class="summary"><h2>Build my own vim</h2>
+<p>分配：全书总共424页</p>
+                    <a class="btn btn-default btn-xs" href="/build-my-own-vim.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>wstnap</title><link href="/" rel="alternate"></link><link href="/feeds/me.atom.xml" rel="self"></link><id>/</id><updated>2014-10-01T00:00:00+02:00</updated><entry><title>Basic Editing</title><link href="/basic-editing.html" rel="alternate"></link><updated>2014-10-01T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-10-01:basic-editing.html</id><summary type="html">&lt;h2&gt;Basic Editing&lt;/h2&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>wstnap</title><link>/</link><description></description><atom:link href="/feeds/me.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 01 Oct 2014 00:00:00 +0200</lastBuildDate><item><title>Basic Editing</title><link>/basic-editing.html</link><description>&lt;h2&gt;Basic Editing&lt;/h2&gt;
 &lt;h4&gt;Inserting Text&lt;/h4&gt;
 &lt;p&gt;i       insert before current cursor
 a       insert after current cursor&lt;/p&gt;
@@ -23,8 +23,8 @@ Ctrl + R    redo undo(redo the edit undoed by u or)&lt;/p&gt;
 &lt;p&gt;:q
 :wq
 :q!
-:wq!&lt;/p&gt;</summary></entry><entry><title>Build my own vim</title><link href="/build-my-own-vim.html" rel="alternate"></link><updated>2014-09-30T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-09-30:build-my-own-vim.html</id><summary type="html">&lt;h2&gt;Build my own vim&lt;/h2&gt;
-&lt;p&gt;分配：全书总共424页&lt;/p&gt;</summary></entry><entry><title>Unique Binary Search Trees II</title><link href="/unique-binary-search-trees-ii.html" rel="alternate"></link><updated>2014-09-30T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-09-30:unique-binary-search-trees-ii.html</id><summary type="html">&lt;h2&gt;Unique Binary Search Trees II&lt;/h2&gt;
+:wq!&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Wed, 01 Oct 2014 00:00:00 +0200</pubDate><guid>tag:,2014-10-01:basic-editing.html</guid></item><item><title>Build my own vim</title><link>/build-my-own-vim.html</link><description>&lt;h2&gt;Build my own vim&lt;/h2&gt;
+&lt;p&gt;分配：全书总共424页&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Tue, 30 Sep 2014 00:00:00 +0200</pubDate><guid>tag:,2014-09-30:build-my-own-vim.html</guid></item><item><title>Unique Binary Search Trees II</title><link>/unique-binary-search-trees-ii.html</link><description>&lt;h2&gt;Unique Binary Search Trees II&lt;/h2&gt;
 &lt;p&gt;Given number n, generate all structurally unique BST's(binary search trees) that store values 1..n.&lt;/p&gt;
 &lt;p&gt;思路：递归
 具体描述：n个数字每个数字都有可能成为根节点，针对不同的根节点，将数组划分为1 ~ i-1, i+1 ~ n;
@@ -86,7 +86,7 @@ BST构建思路：generate函数负责构建BST，参数为起始val,终止val�
 &lt;span class="p"&gt;}&lt;/span&gt;
 
 &lt;span class="p"&gt;};&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>Learning Perl-Scalar Data</title><link href="/learning-perl-scalar-data.html" rel="alternate"></link><updated>2014-09-29T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-09-29:learning-perl-scalar-data.html</id><summary type="html">&lt;h2&gt;Scalar Data&lt;/h2&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Tue, 30 Sep 2014 00:00:00 +0200</pubDate><guid>tag:,2014-09-30:unique-binary-search-trees-ii.html</guid></item><item><title>Learning Perl-Scalar Data</title><link>/learning-perl-scalar-data.html</link><description>&lt;h2&gt;Scalar Data&lt;/h2&gt;
 &lt;h3&gt;Numbers&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;All numbers are same format internally.They are treated as double precision floating-point values.&lt;/strong&gt;&lt;/p&gt;
 &lt;h4&gt;Floating-Point Literals&lt;/h4&gt;
@@ -267,7 +267,7 @@ if(defined($madonna)){
     print("The input was $madonna");
 } else {
     print("No input available!\n");
-}&lt;/p&gt;</summary></entry><entry><title>Lists And Array</title><link href="/lists-and-array.html" rel="alternate"></link><updated>2014-09-29T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-09-29:lists-and-array.html</id><summary type="html">&lt;h3&gt;What is Lists and Arrays&lt;/h3&gt;
+}&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Mon, 29 Sep 2014 00:00:00 +0200</pubDate><guid>tag:,2014-09-29:learning-perl-scalar-data.html</guid></item><item><title>Lists And Array</title><link>/lists-and-array.html</link><description>&lt;h3&gt;What is Lists and Arrays&lt;/h3&gt;
 &lt;p&gt;A list is an ordered collection of scalars.&lt;/p&gt;
 &lt;p&gt;An array is a variable that contains a list.
 To be accurate,the list is data,and the array is variable.You can have a list that isn't an array, but every array hosts a list, through it may be empty.&lt;/p&gt;
@@ -315,7 +315,7 @@ To be accurate,the list is data,and the array is variable.You can have a list th
 
 &lt;span class="o"&gt;******&lt;/span&gt;
 &lt;span class="n"&gt;print&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;rock&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;    &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="n"&gt;should&lt;/span&gt; &lt;span class="n"&gt;be&lt;/span&gt; &lt;span class="n"&gt;an&lt;/span&gt; &lt;span class="n"&gt;fatal&lt;/span&gt; &lt;span class="n"&gt;error&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary></entry><entry><title>C++ 左值和右值</title><link href="/c-zuo-zhi-he-you-zhi.html" rel="alternate"></link><updated>2014-08-29T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-08-29:c-zuo-zhi-he-you-zhi.html</id><summary type="html">&lt;p&gt;以下程序中，str1, str2永远是不同的地址，而str3,  str5是同样的地址,char str1[]  = "hello world"；开辟了空间，并且把"hello world"复制到里面。&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Mon, 29 Sep 2014 00:00:00 +0200</pubDate><guid>tag:,2014-09-29:lists-and-array.html</guid></item><item><title>C++ 左值和右值</title><link>/c-zuo-zhi-he-you-zhi.html</link><description>&lt;p&gt;以下程序中，str1, str2永远是不同的地址，而str3,  str5是同样的地址,char str1[]  = "hello world"；开辟了空间，并且把"hello world"复制到里面。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kt"&gt;int&lt;/span&gt; &lt;span class="nf"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="kt"&gt;char&lt;/span&gt; &lt;span class="n"&gt;str1&lt;/span&gt;&lt;span class="p"&gt;[]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;hello world&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
@@ -414,7 +414,7 @@ To be accurate,the list is data,and the array is variable.You can have a list th
 &lt;p&gt;T() T(1)产生的对象的生存期只存在一句话中，
     coustuct
     construct with integer parameters
-    after statement&lt;/p&gt;</summary><category term="c++"></category><category term="rvalue"></category><category term="lvalue"></category></entry><entry><title>ajax &amp; 302</title><link href="/ajax-302.html" rel="alternate"></link><updated>2014-08-21T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-08-21:ajax-302.html</id><summary type="html">&lt;h3&gt;HTTP 302&lt;/h3&gt;
+    after statement&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Fri, 29 Aug 2014 00:00:00 +0200</pubDate><guid>tag:,2014-08-29:c-zuo-zhi-he-you-zhi.html</guid><category>c++</category><category>rvalue</category><category>lvalue</category></item><item><title>ajax &amp; 302</title><link>/ajax-302.html</link><description>&lt;h3&gt;HTTP 302&lt;/h3&gt;
 &lt;p&gt;HTTP 302 response code mean the page is Moved Temporarily.&lt;/p&gt;
 &lt;p&gt;When server return this code, it will also give an &lt;code&gt;Location: http://xxx&lt;/code&gt; field, in which browser will find a new URL to send another request.&lt;/p&gt;
 &lt;p&gt;Also see: &lt;a href="http://en.wikipedia.org/wiki/HTTP_302"&gt;wiki/HTTP 302&lt;/a&gt;&lt;/p&gt;
@@ -459,7 +459,7 @@ To be accurate,the list is data,and the array is variable.You can have a list th
 
 
 &lt;h3&gt;related links&lt;/h3&gt;
-&lt;p&gt;&lt;a href="http://www.cnblogs.com/dudu/p/ajax_302_found.html"&gt;cnblogs: jax与302响应&lt;/a&gt;&lt;/p&gt;</summary><category term="JavaScript"></category></entry><entry><title>iptables problem after rc-update</title><link href="/iptables-problem-after-rc-update.html" rel="alternate"></link><updated>2014-08-14T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-08-14:iptables-problem-after-rc-update.html</id><summary type="html">&lt;h3&gt;背景&amp;amp;问题产生&lt;/h3&gt;
+&lt;p&gt;&lt;a href="http://www.cnblogs.com/dudu/p/ajax_302_found.html"&gt;cnblogs: jax与302响应&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Thu, 21 Aug 2014 00:00:00 +0200</pubDate><guid>tag:,2014-08-21:ajax-302.html</guid><category>JavaScript</category></item><item><title>iptables problem after rc-update</title><link>/iptables-problem-after-rc-update.html</link><description>&lt;h3&gt;背景&amp;amp;问题产生&lt;/h3&gt;
 &lt;p&gt;实验室限制ipv4流量每月2G。为了让后端设备可以顺畅的访问互联网，想出了方案
 &lt;img alt="image" src="http://www.wstnap.com/images/net-for-baha.png" /&gt;
 最近在Dell的小机箱安装了ubuntu.配置了openvpn client和ap-hotspot.买了linode的最低配的VPS.&lt;/p&gt;
@@ -507,7 +507,7 @@ iptables -t nat -s 192.168.150.0/24 -d &lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;tcpdump&lt;/li&gt;
 &lt;li&gt;iptables配置&lt;/li&gt;
-&lt;/ol&gt;</summary><category term="iptables"></category></entry><entry><title>JS Note</title><link href="/js-note.html" rel="alternate"></link><updated>2014-07-10T00:00:00+02:00</updated><author><name>me</name></author><id>tag:,2014-07-10:js-note.html</id><summary type="html">&lt;p&gt;&lt;strong&gt; Web Deveslop&lt;/strong&gt;&lt;/p&gt;
+&lt;/ol&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Thu, 14 Aug 2014 00:00:00 +0200</pubDate><guid>tag:,2014-08-14:iptables-problem-after-rc-update.html</guid><category>iptables</category></item><item><title>JS Note</title><link>/js-note.html</link><description>&lt;p&gt;&lt;strong&gt; Web Deveslop&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -856,4 +856,4 @@ str.toLowerCase()&lt;/p&gt;
 &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attachEvent&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;attachEvent&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;onclick&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;myFunction&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary></entry></feed>
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">me</dc:creator><pubDate>Thu, 10 Jul 2014 00:00:00 +0200</pubDate><guid>tag:,2014-07-10:js-note.html</guid></item></channel></rss>
